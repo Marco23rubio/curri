@@ -20,7 +20,7 @@ export class LandingComponent {
   ) {}
   nombre: string;
 
-  holamundo() {
+  inputnombre() {
     
     if (this.nombre == null || this.nombre == undefined ||this.nombre.length == 0) {
       Swal.fire({
