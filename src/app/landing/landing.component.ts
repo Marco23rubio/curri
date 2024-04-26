@@ -15,7 +15,6 @@ export class LandingComponent {
   constructor(
     private router: Router,
   ) {}
-  nombre: string;
 
   enviarAlMenu() {
     this.router.navigate(['/menu']);
