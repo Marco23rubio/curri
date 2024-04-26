@@ -19,26 +19,11 @@
   style="background-image: url('assets/header.png')"
 >
   <div class="h-full">
-    <!--Nav-->
-    <div class="w-full container mx-auto">
-      <div class="w-full flex items-center justify-between">
-        <a
-          class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-        >
-          Marco<span
-            class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500"
-          >
-            Rubio</span
-          >
-        </a>
-      </div>
-    </div>
-
     <!--Main-->
     <div
-      class="container pt-24 md:pt-12 mx-auto flex flex-wrap flex-col md:flex-row items-center"
+      class="container pt-32 md:pt-18 mx-auto flex flex-wrap flex-col md:flex-row items-center"
     >
-      <!--Left Col-->
+      <!--Columna Izquierda-->
       <div
         class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden"
       >
@@ -51,47 +36,26 @@
           >
             Bienvenido
           </span>
-          a mi Currículum
+          a mi Currículum,soy Marco Rubio
         </h1>
         <p
           class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left"
         >
-          Un resumen de mis habilidades y experiencias desarrollado con Angular
+          Esto es un resumen de mis habilidades y experiencias desarrollado con Angular
         </p>
 
-        <div
-          class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4"
-        >
-          <div class="mb-4">
-            <label
-              class="block text-blue-300 py-2 font-bold mb-2"
-              for="emailaddress"
-            >
-              Introduzca su nombre aqui:
-            </label>
-            <input
-              pInputText
-              class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-              type="text"
-              placeholder="Juanito Perez"
-              [(ngModel)]="nombre"
-              maxlength="50"
-              (keyup.enter)="inputnombre()"
-            />
-          </div>
-          <div class="flex items-center justify-between pt-4">
+          <div class="flex justify-center pt-4">
             <button
               class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
               type="button"
-              (click)="inputnombre()"
+              (click)="enviarAlMenu()"
             >
               Empezemos
             </button>
           </div>
-        </div>
       </div>
 
-      <!--Right Col-->
+      <!--Columna derecha-->
       <div class="w-full xl:w-3/5 p-12 overflow-hidden">
         <img
           class="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
