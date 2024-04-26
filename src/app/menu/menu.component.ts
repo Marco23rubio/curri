@@ -14,10 +14,16 @@ export class MenuComponent {
     private dataService: DataService
   ) {}
 
-  inputname: any;
+  inputname: string;
+  nameaAmostrar:string;
 
   ngOnInit() {
     this.inputname = this.dataService.getNombre();
+    if (this.inputname == null || this.inputname == undefined || this.inputname.length == 0) {
+      this.nameaAmostrar = 'Desconocido';
+    } else {
+      this.nameaAmostrar = this.inputname;
+    }
     console.log(this.inputname);
   }
 

@@ -1,10 +1,3 @@
-.carta {
-    position: relative;
-    overflow: hidden;
-    padding: 2rem; 
-    border-radius: 1rem; 
-    background-color: #718096; 
-    border: 1px solid #CBD5E0; 
-    display: flex;
-    flex-direction: column;
+h2 {
+  font-family: 'Poppins', sans-serif;
 }
