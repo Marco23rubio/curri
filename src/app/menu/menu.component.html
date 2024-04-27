@@ -6,276 +6,53 @@
 
     <div class="mx-auto px-16 max-w-8xl text-gray-500">
         <div class="relative text-center">
-            <h1 class="leading-normal text-white md:text-4xl mb-8">
+            <h1 class="leading-normal text-white md:text-4xl mb-8 font-bold">
               Hola, soy Marco Rubio, selecciona una opción para ver más detalles
             </h1>
           </div>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="mt-12 grid sm:grid-cols-3 lg:grid-cols-3 gap-3">
         <!-- Primer elemento -->
         <div
+          *ngFor=" let item of items"
           class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
         >
           <div
             aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-green-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
+            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-{{item.color}}-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
           ></div>
           <div class="relative">
             <!-- Cuadrito -->
             <div
-              class="border border-green-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-green-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
+              class="border border-{{item.color}}-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-{{item.color}}-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
             >
               <img
-                src="assets/training.png"
+                src="{{item.image}}"
                 class="rounded-lg w-full h-full object-cover"
-                alt="Experiencia laboral"
+                alt="{{item.alt}}"
               />
             </div>
             <!-- Texto -->
             <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Experiencia laboral</p>
+              <p class="text-2xl text-white">{{item.title}}</p>
             </div>
             <!-- Botones -->
             <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
+              class="flex gap-3 -mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
             >
               <a
-                href="experiencia"
+                href="{{item.link}}"
                 class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
               >
-                <span>Ver más</span>
+                <span class="font-bold">Ver más</span>
                 <svg width="1em" height="1em" viewBox="0 0 24 24">
                   <path
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
+                    stroke-width="3"
                     d="M6 12h14m-7 7l7-7-7-7"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Segundo elemento -->
-        <div
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
-        >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-yellow-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <div
-              class="border border-yellow-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-yellow-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="assets/reading.png"
-                class="rounded-lg w-full h-full object-cover"
-                alt="Educación"
-              />
-            </div>
-
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Educación</p>
-            </div>
-
-            <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="educacion"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span>Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 12h14m-7 7l7-7-7-7"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Tercer elemento -->
-        <div
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
-        >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-pink-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <div
-              class="border border-pink-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-pink-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="assets/certificate.png"
-                class="rounded-lg w-full h-full object-cover"
-                alt="Cursos y certificaciones"
-              />
-            </div>
-
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Cursos y certificaciones</p>
-            </div>
-
-            <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="cursos"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span>Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 12h14m-7 7l7-7-7-7"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Cuarto elemento -->
-        <div
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
-        >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-red-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <div
-              class="border border-red-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-red-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="assets/web-programming.png"
-                class="rounded-lg w-full h-full object-cover"
-                alt="Proyectos personales"
-              />
-            </div>
-
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Proyectos personales</p>
-            </div>
-
-            <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="proyectos"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span>Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 12h14m-7 7l7-7-7-7"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Quinto elemento -->
-        <div
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
-        >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-blue-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <div
-              class="border border-blue-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-blue-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="assets/man.png"
-                class="rounded-lg w-full h-full object-cover"
-                alt="Sobre mi"
-              />
-            </div>
-
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Sobre mi</p>
-            </div>
-
-            <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="sobremi"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span>Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 12h14m-7 7l7-7-7-7"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Sexto elemento -->
-        <div
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
-        >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-indigo-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <div
-              class="border border-indigo-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-indigo-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="assets/smartphone.png"
-                class="rounded-lg w-full h-full object-cover"
-                alt="Contacto"
-              />
-            </div>
-
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">Contacto</p>
-            </div>
-
-            <div
-              class="-mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="contacto"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span>Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 12h14m-7 7l7-7-7-7"
+                    style="transform: translateY(2px);"
                   ></path>
                 </svg>
               </a>
@@ -286,3 +63,4 @@
     </div>
   </div>
 </section>
+
