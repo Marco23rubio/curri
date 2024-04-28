@@ -1,66 +1,34 @@
-<section
-  class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed min-h-screen"
-  style="background-image: url('assets/header.png')"
->
-  <div class="py-12">
-
-    <div class="mx-auto px-16 max-w-8xl text-gray-500">
-        <div class="relative text-center">
-            <h1 class="leading-normal text-white md:text-4xl mb-8 font-bold">
-              Hola, soy Marco Rubio, selecciona una opción para ver más detalles
-            </h1>
-          </div>
-      <div class="mt-12 grid sm:grid-cols-3 lg:grid-cols-3 gap-3">
-        <!-- Primer elemento -->
-        <div
-          *ngFor=" let item of items"
-          class="relative group overflow-hidden p-10 rounded-xl bg-gray-500 border border-gray-200"
+  <section class="bg-gray-900 text-white min-h-screen w-full">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Hola , soy Marco Rubio</h2>
+        <p class="mt-4 text-gray-300 text-xl">
+          He elaborado este curriculum con el propósito de asegurar una oportunidad para crecer como científico de datos. Estoy emocionado por la posibilidad de ser considerado para este puesto.
+        </p>
+      </div>
+  
+      <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <a
+          *ngFor="let item of items"
+          class="block rounded-xl border border-gray-800 p-10 shadow-lg transition hover:{{item.hover}}"
+          href="{{item.link}}"
         >
-          <div
-            aria-hidden="true"
-            class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-{{item.color}}-600 to-white dark:from-white dark:to-white blur-2xl opacity-70 dark:opacity-60 dark:group-hover:opacity-10"
-          ></div>
-          <div class="relative">
-            <!-- Cuadrito -->
-            <div
-              class="border border-{{item.color}}-500/10 flex relative *:relative *:size-9 *:m-auto size-12 rounded-lg dark:bg-gray-900 dark:border-white/15 before:rounded-[7px] before:absolute before:inset-0 before:border-t before:border-white before:from-{{item.color}}-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950"
-            >
-              <img
-                src="{{item.image}}"
-                class="rounded-lg w-full h-full object-cover"
-                alt="{{item.alt}}"
-              />
-            </div>
-            <!-- Texto -->
-            <div class="mt-6 pb-6 rounded-b-[--card-border-radius]">
-              <p class="text-2xl text-white">{{item.title}}</p>
-            </div>
-            <!-- Botones -->
-            <div
-              class="flex gap-3 -mb-8 py-4 border-t border-gray-800 dark:border-gray-800"
-            >
-              <a
-                href="{{item.link}}"
-                class="group rounded-xl text-gray-950 bg-gray-300 hover:bg-gray-100 active:bg-gray-100 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center"
-              >
-                <span class="font-bold">Ver más</span>
-                <svg width="1em" height="1em" viewBox="0 0 24 24">
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                    d="M6 12h14m-7 7l7-7-7-7"
-                    style="transform: translateY(2px);"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+        <img 
+        src="{{item.imagen}}" 
+        class="size-10 text-pink-500" 
+        alt="{{item.alt}}"
+      />
+          <h2 class="mt-4 text-xl font-bold text-white">{{item.titulo}}</h2>
+        </a>
+      </div>
+      <div class="mt-12 text-center">
+        <button
+          (click)="descargarCV()"
+          class="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 focus:outline-none"
+        >
+          Descargar CV
+        </button>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+  

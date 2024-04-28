@@ -17,50 +17,54 @@ export class MenuComponent {
 
   items = [
     {
-      title: 'Experiencia laboral',
-      image: 'assets/training.png',
+      titulo: 'Experiencia laboral',
+      imagen: 'assets/training.png',
       alt: 'Experiencia laboral',
       link: 'experiencia',
-      color: 'green'
+      hover:'hover:border-green-500/10 hover:shadow-green-500/10'
     },
     {
-      title: 'Educación',
-      image: 'assets/reading.png',
+      titulo: 'Educación',
+      imagen: 'assets/reading.png',
       alt: 'Educación',
       link: 'educacion',
-      color: 'yellow'
+      hover:'hover:border-yellow-500/10 hover:shadow-yellow-500/10'
     },
     {
-      title: 'Cursos y certificaciones',
-      image: 'assets/certificate.png',
+      titulo: 'Cursos y certificaciones',
+      imagen: 'assets/certificate.png',
       alt: 'Cursos y certificaciones',
       link: 'cursos',
-      color: 'pink'
+      hover:'hover:border-pink-500/10 hover:shadow-pink-500/10'
     },
     {
-      title: 'Proyectos personales',
-      image: 'assets/web-programming.png',
+      titulo: 'Proyectos personales',
+      imagen: 'assets/web-programming.png',
       alt: 'Proyectos personales',
       link: 'proyectos',
-      color: 'red'
+      hover:'hover:border-red-500/10 hover:shadow-red-500/10'
     },
     {
-      title: 'Acerca de mí',
-      image: 'assets/man.png',
+      titulo: 'Acerca de mí',
+      imagen: 'assets/man.png',
       alt:'Acerca de mí',
       link: 'sobremi',
-      color: 'blue'
+      hover:'hover:border-blue-500/10 hover:shadow-blue-500/10'
     },
     {
-      title: 'Contacto',
-      image: 'assets/smartphone.png',
+      titulo: 'Contacto',
+      imagen: 'assets/mobile.png',
       alt: 'Contacto',
       link: 'contacto',
-      color: 'indigo'
+      hover:'hover:border-indigo-500/10 hover:shadow-indigo-500/10'
     }
   ]
 
   ngOnInit() {
+  }
+
+  descargarCV() {
+    console.log('Descargando CV');
   }
 
 }
