@@ -1,10 +1,12 @@
-  <section class="bg-gray-900 text-white min-h-screen w-full">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+  <section class="flex flex-col bg-gray-900 text-white min-h-screen w-full">
+    <div class="flex-grow mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div class="text-center">
-        <h2 class="text-3xl font-bold sm:text-4xl">Hola , soy Marco Rubio</h2>
-        <p class="mt-4 text-gray-300 text-xl">
+        <h2 class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl leading-normal">Hola , mi nombre es Marco Rubio</h2>
+        <br>
+        <p class="mt-4 text-gray-300 text-2xl">
           He elaborado este curriculum con el propósito de asegurar una oportunidad para crecer como científico de datos. Estoy emocionado por la posibilidad de ser considerado para este puesto.
         </p>
+        <br>
       </div>
   
       <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -22,13 +24,20 @@
         </a>
       </div>
       <div class="mt-12 text-center">
+        <a #downloadLink href="assets/MarcoRubio_CV.pdf" download style="display: none;"></a>
         <button
-          (click)="descargarCV()"
-          class="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 focus:outline-none"
+          (click)="descargarCV(downloadLink)"
+          class="inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-800 focus:outline-none"
         >
           Descargar CV
         </button>
       </div>
     </div>
+    <footer class="footer items-center p-4 bg-neutral text-neutral-content">
+      <aside class="items-center grid-flow-col">
+        <p>&copy; WEB PAGE 2024</p>
+      </aside> 
+    </footer>
   </section>
+
   

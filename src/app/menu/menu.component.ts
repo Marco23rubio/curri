@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-menu',
@@ -63,8 +64,25 @@ export class MenuComponent {
   ngOnInit() {
   }
 
-  descargarCV() {
-    console.log('Descargando CV');
+  descargarCV(downloadLink: HTMLAnchorElement) {
+    try {
+      downloadLink.click();
+      Swal.fire({
+        title: 'Gracias por tu interés, descarga finalizada.',
+        icon: 'success',
+        iconColor: 'white',
+        background: '#1E3A8A',
+        color: 'white',
+      });
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        title: 'Ocurrió un error al descargar el CV.',
+        icon: 'error',
+        iconColor:'red',
+        background: '#1E3A8A',
+        color: 'white',
+      });
+    }
   }
-
 }
