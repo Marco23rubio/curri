@@ -8,16 +8,16 @@
         </p>
         <br>
       </div>
-  
+
       <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <a
           *ngFor="let item of items"
-          class="block rounded-xl border border-gray-800 p-10 shadow-lg transition hover:{{item.hover}}"
+          class="block rounded-xl border border-gray-700 p-10 shadow-lg transition hover:{{item.hover}}"
           href="{{item.link}}"
         >
-        <img 
-        src="{{item.imagen}}" 
-        class="size-10 text-pink-500" 
+        <img
+        src="{{item.imagen}}"
+        class="size-10 text-pink-500"
         alt="{{item.alt}}"
       />
           <h2 class="mt-4 text-xl font-bold text-white">{{item.titulo}}</h2>
@@ -27,7 +27,7 @@
         <a #downloadLink href="assets/MarcoRubio_CV.pdf" download style="display: none;"></a>
         <button
           (click)="descargarCV(downloadLink)"
-          class="inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-800 focus:outline-none"
+          class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none"
         >
           Descargar CV
         </button>
@@ -36,8 +36,7 @@
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
       <aside class="items-center grid-flow-col">
         <p>&copy; WEB PAGE 2024</p>
-      </aside> 
+      </aside>
     </footer>
   </section>
 
-  
