@@ -5,7 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RouterOutlet } from '@angular/router';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
