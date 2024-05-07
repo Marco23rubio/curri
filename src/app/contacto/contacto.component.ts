@@ -84,7 +84,7 @@ export class ContactoComponent {
   else{
       Swal.fire({
         title: 'UPS!',
-        text: 'Favor de verificar los campos, parece que hay campos vacios',
+        text: 'Favor de verificar los campos, parece que hay campos vacios o erroneos',
         icon: 'warning',
         iconColor:'yellow',
         background: '#1E3A8A',

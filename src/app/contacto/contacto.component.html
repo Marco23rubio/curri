@@ -5,32 +5,32 @@
     <p class="mt-4 text-white text-2xl">Cargando...</p>
   </div>
 </div>
-<div class="flex flex-col min-h-screen bg-gray-900 dark:bg-gray-900 text-justify">
+<div class="flex flex-col min-h-screen bg-gray-900 dark:bg-gray-900 text-justify text-gray-200">
   <div class="max-w-screen-lg mx-auto p-5">
-    <div class="grid grid-cols-1 md:grid-cols-12 border">
+    <div class="grid grid-cols-1 md:grid-cols-16 border">
         <div class="bg-gray-900 md:col-span-4 p-10 text-white">
             <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">
                 Pongámonos en <span class="text-indigo-600">Contacto</span>
             </h3>
-            <p class="mt-4 leading-7 text-gray-200">
+            <p class="mt-4 leading-7 text-gray-200 text-2xl">
               Aquí encontrarás mis datos, además puedes utilizar el formulario para enviarme un Mensaje.
             </p>
 
             <div class="flex items-center mt-5">
-              <img class="h-6 mr-2 text-indigo-600" src="assets/house.png" alt="Chamba" />
-                <span class="text-sm">Culiacán,Sinaloa</span>
+              <img class="h-9 mr-2 text-indigo-600" src="assets/house.png" alt="Chamba" />
+                <span class="text-lg">Culiacán,Sinaloa</span>
             </div>
             <div class="flex items-center mt-5">
-              <img class="h-6 mr-2 text-indigo-600" src="assets/chat.png" alt="Chamba" />
-                <span class="text-sm">6672528776</span>
+              <img class="h-9 mr-2 text-indigo-600" src="assets/chat.png" alt="Chamba" />
+                <span class="text-lg">6672528776</span>
             </div>
-            <div class="flex items-center mt-5">
-              <img class="h-6 mr-2 text-indigo-600" src="assets/mailbox.png" alt="Chamba" />
-                <span class="text-sm">marcoantonio23rubio&#64;gmail.com</span>
+            <div class="flex items-center mt-5 overflow-auto">
+              <img class="h-9 mr-2 text-indigo-600" src="assets/mailbox.png" alt="Chamba" />
+                <span class="text-sm sm:text-lg">marcoantonio23rubio&#64;gmail.com</span>
             </div>
 
         </div>
-        <form #form="ngForm" (ngSubmit)="enviarMensaje(form)" class="md:col-span-8 p-10">
+        <form #form="ngForm" (ngSubmit)="enviarMensaje(form)" class="md:col-span-8 p-3">
           <fieldset class="flex justify-center rounded-md shadow-sm mb-3">
             <legend class="sr-only">Group of buttons</legend>
             <button type="button" value="whatsapp" (click)="botonSeleccionado('whatsapp')" [ngClass]="{'selected': botonselecto === 'whatsapp'}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
