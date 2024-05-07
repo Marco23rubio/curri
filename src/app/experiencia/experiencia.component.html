@@ -1,20 +1,40 @@
 <div class="flex flex-col min-h-screen bg-gray-900 dark:bg-gray-900 text-justify">
 
-  <article class="font-fira mx-auto max-w-5xl p-4 selection:bg-black text-white selection:text-white flex-grow">
-    <h1 class="font-fira mb-8 text-4xl font-bold dark:text-white sm:mt-12">Experiencia <span class="text-green-500">Laboral</span></h1>
+  <article class="font-fira mx-auto max-w-5xl p-4 selection:bg-black text-gray-200 selection:text-white flex-grow">
+    <h1 class="font-fira mb-8 text-4xl font-bold sm:mt-12">Experiencia <span class="text-green-500">Laboral</span></h1>
 
     <img class="float-right w-60 rounded-lg -mt-8 ml-12" src="assets/training.png" alt="Chamba" />
 
-    <p class="mt-10 text-xl dark:text-neutral-200">Aqui encontraras los diferentes <span class="text-green-400">empleos</span> que he tenido a lo largo del tiempo, además de explicar las <span class="text-green-400">actividades</span> que desarrolle, las <span class="text-green-400">fortalezas</span> que obtuve gracias a ellos y por ultimo  las circunstancias que llevaron a la finalización de cada relación laboral. </p>
+    <p class="mt-10 text-xl ">Aqui encontraras los diferentes <span class="text-green-400">empleos</span> que he tenido a lo largo del tiempo, además de explicar las <span class="text-green-400">actividades</span> que desarrolle, las <span class="text-green-400">fortalezas</span> que obtuve gracias a ellos y por ultimo  las circunstancias que llevaron a la finalización de cada relación laboral. </p>
     <br>
 
     <section *ngFor="let item of items" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
-      <h2 class="text-3xl font-bold dark:text-white">{{item.empresa}} <span class="text-2xl font-bold dark:text-white">{{item.fecha}}</span></h2>
-      <ul class="mt-6 text-lg dark:text-neutral-200 mr-60 list-disc list-inside">
+      <h2 class="text-3xl font-bold ">{{item.empresa}} <span class="text-2xl font-bold ">{{item.fecha}}</span></h2>
+      <ul class="mt-6 text-lg mr-60 list-disc list-outside ml-6">
         <li *ngFor="let punto of item.descripcion">{{punto}}</li>
+        <li *ngFor="let acordeonItem of item.acordeon"> 
+          <details class="group mt-1">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span>{{acordeonItem.titulo}}</span>
+              <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+            </summary>
+            <p class="mt-2 text-base group-open:animate-fadeIn">
+               {{acordeonItem.texto}}
+            </p>
+          </details>
+        </li>
       </ul>
     </section>
-
+    <div class="mt-12 text-center">
+      <button
+        (click)="enviarAlMenu()"
+        class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none"
+      >
+        Regresar
+      </button>
+    </div>
   </article>
 
     <footer class="footer items-center p-4 bg-neutral text-neutral-content text-white">
@@ -23,5 +43,3 @@
       </aside>
     </footer>
 </div>
-
-
