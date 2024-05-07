@@ -1,0 +1,13 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: red;
+  border-width: 2px;
+}
+
+.selected {
+  background-color: #f7fafc;
+  color: #091bde;
+  border-color: #091bde;
+  z-index: 10;
+  box-shadow: 0 0 0 2px #4299e1;
+}

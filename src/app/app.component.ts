@@ -15,5 +15,4 @@ import { InputTextModule } from 'primeng/inputtext';
 })
 export class AppComponent {
   title = 'cv';
-
 }
