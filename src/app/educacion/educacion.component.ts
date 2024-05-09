@@ -20,7 +20,7 @@ export class EducacionComponent {
   items = [
     {
       'escuela': 'Universidad del Valle de México - ',
-      'fecha': 'Septiembre 2023/Mayo 2024',
+      'fecha': 'Septiembre 2023/Actualidad',
       'descripcion': [
         'Actualmente con la maestría en Ciencia de Datos',
         'El aprendizaje se lleva a traves de la modalidad online',
