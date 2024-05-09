@@ -1,18 +1,18 @@
 <div class="flex flex-col bg-gray-900 min-h-screen w-full">
     <nav class="bg-gray-800 shadow px-48 border-b border-gray-400">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex px-2 lg:px-0">
+        <div class="flex flex-wrap justify-between h-16">
+          <div class="flex px-2 lg:px-0 justify-center lg:justify-start">
             <div class="flex-shrink-0 flex items-center">
               <img
-                class="hidden lg:block h-10 w-auto"
+                class="h-10 w-auto"
                 src="assets/logo3.png"
                 alt="Workflow logo"
               />
             </div>
           </div>
-          <div class="flex-1 flex items-center justify-center px-2 lg:ml-12">
-            <div class="max-w-lg w-full lg:max-w-xs">
+          <div class="flex-1 flex items-center justify-center px-2 lg:ml-12 lg:flex">
+            <div class="w-full lg:max-w-xs lg:block hidden">
               <label for="search" class="sr-only">Buscar</label>
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -35,7 +35,7 @@
           </div>
 
           <!-- icons-->
-          <div class="lg:ml-4 lg:flex lg:items-center">
+          <div class="hidden lg:block lg:ml-4 lg:flex lg:items-center">
             <button
               class="flex-shrink-0 p-1 border-transparent text-gray-100 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out"
               aria-label="Notifications"
@@ -136,25 +136,20 @@
 
     <!--body start-->
     <!--profile data-->
-    <div class="flex flex-col md:flex-row bg-gray-900">
-      <div class="w-full md:w-1/4 p-4 flex justify-center">
-        <div class="w-full relative md:w-3/4 text-center mt-8">
-          <button
-            class="flex rounded-full"
-            id="user-menu"
-            aria-label="User menu"
-            aria-haspopup="true"
-          >
-            <img
-              class="h-40 w-40 rounded-full"
-              src="assets/young-man.png"
-              alt="Perfil"
-            />
-          </button>
-        </div>
-      </div>
+    <div class="flex flex-col md:flex-row bg-gray-900 items-center justify-center mt-8 mb-4">
     
-      <div class="w-full md:w-3/4 p-4 text-center">
+        <button
+        class="flex rounded-full"
+        id="user-menu"
+        aria-label="User menu"
+        aria-haspopup="true"
+      >
+        <img
+          class="h-40 w-40 rounded-full"
+          src="assets/young-man.png"
+          alt="Perfil"
+        />
+      </button>
         <div class="text-left pl-4 pt-3">
           <span class="text-gray-100 text-3xl mr-2">Mar_9802_rubio</span>
           <span class="text-base font-semibold text-gray-100 mr-2">
@@ -194,59 +189,7 @@
               <b>1</b> following
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="flex flex-col bg-gray-900 text-white min-h-screen w-full">
-      <div class="flex md:flex-row-reverse flex-wrap">
-        <div class="w-full md:w-3/4 p-4 text-center">
-          <div class="text-left pl-4 pt-3">
-            <span class="text-gray-100 text-3xl mr-2">Mar_9802_rubio</span>
-            <span class="text-base font-semibold text-gray-100 mr-2">
-              <button
-                class="bg-gray-600 hover:bg-blue-500 text-gray-100 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded"
-              >Editar Perfil</button>
-            </span>
-            <span class="text-base font-semibold text-gray-700">
-              <button
-                class="p-1 border-transparent text-gray-100 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
-                aria-label="Notifications"
-              >
-                <svg
-                  class="h-8 w-8"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </button>
-            </span>
-          </div>
-
-          <div class="text-left pl-4 pt-3">
-            <span class="text-base font-semibold text-gray-100 mr-2">
-              <b>5</b> posts
-            </span>
-            <span class="text-base font-semibold text-gray-100 mr-2">
-              <b>865</b> followers
-            </span>
-            <span class="text-base font-semibold text-gray-100">
-              <b>1</b> following
-            </span>
-          </div>
-
-          <div class="text-left pl-4 pt-3">
-            <span class="text-lg font-bold text-gray-100 mr-2">Marco Rubio</span>
-          </div>
-
-          <div class="text-left pl-4 pt-3">
+          <div class="mt-4">
             <p
               class="text-base font-medium text-blue-500 mr-2 mb-3"
             >#Desarrollador #Financiero #Python #Gamer #Exercise</p>
@@ -259,24 +202,7 @@
             </a>
           </div>
         </div>
-
-        <div class="w-full md:w-1/4 p-4 flex justify-center">
-          <div class="w-full relative md:w-3/4 text-center mt-8">
-            <button
-              class="flex rounded-full"
-              id="user-menu"
-              aria-label="User menu"
-              aria-haspopup="true"
-            >
-              <img
-                class="h-40 w-40 rounded-full"
-                src="assets/young-man.png"
-                alt="Perfil"
-              />
-            </button>
-          </div>
-        </div>
-      </div> -->
+    </div>
 
       <!--status show icon-->
 
@@ -313,7 +239,7 @@
 
       <!--post images-->
 
-      <div class="mt-1 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mx-24">
+      <div class="mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
         <div class="flex-1 text-center px-4 py-2 m-1">
           <img
             class="w-full"
