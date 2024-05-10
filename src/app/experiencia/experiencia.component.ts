@@ -17,6 +17,27 @@ export class ExperienciaComponent {
     private router: Router,
   ) {}
 
+  acordeonAbierto: boolean[] = [];
+  acordeonInternoAbierto: boolean[][] = [];
+  
+  ngOnInit() {
+    this.items.forEach((item, i) => {
+      this.acordeonAbierto[i] = false;
+      this.acordeonInternoAbierto[i] = [];
+      item.acordeon.forEach((_, j) => {
+        this.acordeonInternoAbierto[i][j] = false;
+      });
+    });
+  }
+
+  toggleAcordeon(i: number) {
+    this.acordeonAbierto[i] = !this.acordeonAbierto[i];
+  }
+
+  toggleAcordeonInterno(i: number, j: number) {
+    this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
+  }
+
   items = [
     {
       'empresa': 'Coppel - ',

@@ -155,7 +155,7 @@
           <span class="text-base font-semibold text-gray-100 mr-2">
             <button
               class="bg-gray-600 hover:bg-blue-500 text-gray-100 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded"
-            >Editar Perfil</button>
+            >Ver Perfil</button>
           </span>
           <span class="text-base font-semibold text-gray-700">
             <button
@@ -201,6 +201,7 @@
               https://www.linkedin.com/in/marco-antonio-rubio-martinez-77ab3716a/
             </a>
           </div>
+          <button (click)="enviarAlMenu()" class="mt-3 bg-gray-600 hover:bg-blue-500 text-gray-100 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded">Regresar</button>
         </div>
     </div>
 
@@ -240,24 +241,43 @@
       <!--post images-->
 
       <div class="mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
-        <div class="flex-1 text-center px-4 py-2 m-1">
+        <div *ngFor="let item of items" class="flex-1 text-center px-4 py-2 m-1 relative">
           <img
-            class="w-full"
-            src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-          />
-        </div>
-        <div class="flex-1 text-center px-4 py-2 m-1">
-          <img
-            class="w-full"
-            src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-          />
-        </div>
-        <div class="flex-1 text-center px-4 py-2 m-1">
-          <img
-            class="w-full"
-            src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+            class="w-full cursor-pointer transition-opacity duration-300 hover:opacity-60"
+            src="{{item.imagen}}"
+            (click)="abrirModal(item)"
           />
         </div>
       </div>
-    </div>
-  
+
+      <!-- Modal -->
+      <div class="fixed z-10 inset-0 overflow-y-auto" *ngIf="showModal">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+      
+          <!-- Modal content -->
+          <div class="inline-block align-bottom bg-gray-900 rounded-lg text-gray-100 text-left overflow-hidden shadow-xl transform transition-all sm:mt-[20vh] sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+            <button type="button" class="absolute top-0 right-0 m-2 text-gray-600 hover:text-gray-900 focus:outline-none" (click)="showModal = false">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+            <section class="overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3 p-4">
+              <img
+                alt=""
+                src="{{itemSeleccionado?.imagen}}"
+                class="h-32 w-full object-cover md:h-full"
+              />
+              <div class="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
+                <p class="text-2xl font-semibold uppercase tracking-widest">{{itemSeleccionado?.titulo}}</p>
+                <p class="mt-6">
+                  <span class="mt-2 text-lg">{{itemSeleccionado?.texto}}</span>
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>  

@@ -8,25 +8,35 @@
     <p class="mt-10 text-xl ">Aqui encontraras los diferentes <span class="text-green-400">empleos</span> que he tenido a lo largo del tiempo, además de explicar las <span class="text-green-400">actividades</span> que desarrolle, las <span class="text-green-400">fortalezas</span> que obtuve gracias a ellos y por ultimo  las circunstancias que llevaron a la finalización de cada relación laboral. </p>
     <br>
 
-    <section *ngFor="let item of items" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
-      <h2 class="text-3xl font-bold ">{{item.empresa}} <span class="text-2xl font-bold ">{{item.fecha}}</span></h2>
-      <ul class="mt-6 text-lg mr-60 list-disc list-outside ml-6">
-        <li *ngFor="let punto of item.descripcion">{{punto}}</li>
-        <li *ngFor="let acordeonItem of item.acordeon"> 
-          <details class="group mt-1">
-            <summary class="flex justify-between items-center cursor-pointer list-none">
-              <span>{{acordeonItem.titulo}}</span>
-              <span class="transition group-open:rotate-180">
+    <section *ngFor="let item of items; let i = index" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
+      <details class="group">
+        <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeon(i)">
+          <span class="text-3xl font-bold ">{{item.empresa}} <span class="text-2xl font-bold ">{{item.fecha}}</span></span>
+          <span [class.rotate-180]="acordeonAbierto[i]" class="transition">
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <div class="mt-2 text-base" [class.animate-fadeIn]="acordeonAbierto[i]">
+          <ul class="mt-6 text-lg mr-60 list-disc list-outside ml-6">
+            <li *ngFor="let punto of item.descripcion">{{punto}}</li>
+            <li *ngFor="let acordeonItem of item.acordeon; let j = index"> 
+              <details class="group mt-1">
+                <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeonInterno(i, j)">
+                  <span>{{acordeonItem.titulo}}</span>
+                  <span [class.rotate-180]="acordeonInternoAbierto[i][j]" class="transition">
                     <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                   </span>
-            </summary>
-            <p class="mt-2 text-base group-open:animate-fadeIn">
-               {{acordeonItem.texto}}
-            </p>
-          </details>
-        </li>
-      </ul>
+                </summary>
+                <p class="mt-2 text-base" [class.animate-fadeIn]="acordeonInternoAbierto[i][j]">
+                  {{acordeonItem.texto}}
+                </p>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
     </section>
+
     <div class="mt-12 text-center">
       <button
         (click)="enviarAlMenu()"
