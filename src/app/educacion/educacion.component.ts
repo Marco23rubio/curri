@@ -17,16 +17,30 @@ export class EducacionComponent {
     private router: Router,
   ) {}
 
+  ngOnInit() {
+  }
+
+
   items = [
     {
-      'escuela': 'Universidad del Valle de México - ',
+      'escuela': 'UVM - ',
       'fecha': 'Septiembre 2023/Actualidad',
       'descripcion': [
+        'Universidad del Valle de México',
         'Actualmente con la maestría en Ciencia de Datos',
         'El aprendizaje se lleva a traves de la modalidad online',
         'Aprendizaje sobre matematicas para las ciencias de datos y los diseños de experimentos',
         'Utilización de bibliotecas en Python para el analisis de datos',
       ]
+    },
+    {
+      'escuela': 'Platzi - ',
+      'fecha': 'Febrero 2022/Agosto 2023',
+      'descripcion': [
+        'Escuela donde empiezo con mis indicios sobre analisis de datos',
+        'Conocimiento del lenguaje de programación Python',
+        'Cursos sobre estadística,probabilidad y matematicas aplicadas'      
+      ],
     },
     {
       'escuela': 'Universidad Tecmilenio - ',
@@ -44,15 +58,6 @@ export class EducacionComponent {
           'texto': 'Antes de entrar a estudiar finanzas, entre antes a otra Universidad, aun si tener seguridad de que es lo que deseaba hacer, luego de un año en esta otra escuela, tome la decisión de estudiar finanzas en el TecMilenio',
         }
       ]
-    },
-    {
-      'escuela': 'Platzi - ',
-      'fecha': 'Febrero 2022/Agosto 2023',
-      'descripcion': [
-        'Escuela donde empiezo con mis indicios sobre analisis de datos',
-        'Conocimiento del lenguaje de programación Python',
-        'Cursos sobre estadística,probabilidad y matematicas aplicadas'      
-      ],
     },
     {
       'escuela': 'Colegio Sinaloa Horizontes - ',
