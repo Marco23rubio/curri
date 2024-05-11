@@ -8,7 +8,7 @@
       <p class="mt-10 text-2xl ">Aqui observaras las diferentes <span class="text-yellow-400">instituciones</span> a las que he asistido durante mi vida  <span class="text-yellow-400">escolar</span></p>
       <br>
   
-      <section *ngFor="let item of items" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
+      <section *ngFor="let item of items" class="mt-4 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg max-w-7xl ">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer list-none">
             <h2 class="text-3xl font-bold ">{{item.escuela}} <span class="text-2xl font-bold ">{{item.fecha}}</span></h2>
@@ -18,7 +18,7 @@
           </summary>
           <ul class="mt-6 text-lg mr-60 list-disc list-outside ml-6 group-open:animate-fadeIn">
             <li *ngFor="let punto of item.descripcion">{{punto}}</li>
-            <li *ngFor="let acordeonItem of item.acordeon"> 
+          <li *ngFor="let acordeonItem of item.acordeon"> 
               <details class="group mt-1">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
                   <span>{{acordeonItem.titulo}}</span>

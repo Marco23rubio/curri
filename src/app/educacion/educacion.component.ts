@@ -47,7 +47,7 @@ export class EducacionComponent {
       'fecha': 'Junio 2017/Julio 2021',
       'descripcion': [
         'Estudio Administración financiera',
-        'Obtengo las herramientas para el análisis de empresas y la toma de decisiones con dichos analisis',
+        'Obtengo las herramientas para el análisis de empresas',
         'Gracias a un profesor me introduje en el mundo de las inversiones bursatiles',
         'Aprovecho la facilidad de obtener practicas para trabajar en diferentes empresas',
         'Me graduo con un promedio de 93',
