@@ -20,17 +20,17 @@ export class CursosComponent {
   itemscol1 = [
     {
       titulo:'Curso de AMIB',
-      descripcion:'Curso de AMIB',
+      descripcion:'Certicacion del AMIB en figura 3,te valida como Asesor de Inversiones y ofrece autorización para representar cleintes en operaciones bursátiles',
       imagen:'assets/chat.png'
     },
     {
       titulo:'Carrera en Blockchain',
-      descripcion:'Otro curso',
+      descripcion:'Conocimietos para entender y contribuir en la tecnologia Blockchain para el sector financiero, además de estrategias de inversión para criptomonedas y tokens digitales',
       imagen:'assets/chat.png'
     },
     {
       titulo:'Análisis técnico de mercados financieros', 
-      descripcion:'Otro curso',
+      descripcion:'Curso especializado en el análisis tecnico de empresas y calculos estadisticos para predecir el comportamiento de las acciones en el futuro',
       imagen:'assets/chat.png'
     }
   ]
