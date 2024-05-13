@@ -38,7 +38,7 @@
                                         <h3 class="text-lg font-semibold text-white">{{item.titulo}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-md">{{item.descripcion}}</p>
+                                <p class="leading-normal text-gray-300 text-lg">{{item.descripcion}}</p>
                             </div>
                         </a>
                     </div>
@@ -61,7 +61,7 @@
                                         <h3 class="text-lg font-semibold text-white">{{item.titulo}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-md">{{item.descripcion}}</p>
+                                <p class="leading-normal text-gray-300 text-lg">{{item.descripcion}}</p>
                             </div>
                         </a>
                     </div>
@@ -83,12 +83,22 @@
                                         <h3 class="text-lg font-semibold text-white">{{item.titulo}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-md">{{item.descripcion}}</p>
+                                <p class="leading-normal text-gray-300 text-lg">{{item.descripcion}}</p>
                             </div>
                         </a>
                     </div>
                 </li>
             </ul>
         </div>
+
+        <div class="flex justify-center mt-4">
+            <button
+              (click)="enviarAlMenu()"
+              class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-md font-medium text-white hover:bg-blue-800 focus:outline-none"
+            >
+              Regresar
+            </button>
+          </div>
     </div>
+
 </section>
