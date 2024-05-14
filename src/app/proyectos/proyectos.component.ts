@@ -21,41 +21,41 @@ export class ProyectosComponent {
   items = [
     {
       descripcion: 'Texto prueba chiquito',
-      titulo: 'Proyecto 1',
-      imagen: 'assets/mailbox.png',
+      titulo: 'Curriculum Vitae',
+      imagen: 'assets/curri1.jpg',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
       descripcion: 'Texto prueba',
-      titulo: 'Proyecto 2',
+      titulo: 'Paneles solares',
       md :'col-span-2',
-      imagen: 'assets/excel.png',
+      imagen: 'assets/paneles4.jpeg',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
       descripcion: 'Texto prueba',
-      titulo: 'Proyecto 3',
+      titulo: 'Google Coolab y Jupyter Notebooks',
       md :'col-span-2',
-      imagen: 'assets/excel.png',
+      imagen: 'assets/jupyter2.png',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
       descripcion: 'Texto prueba chiquito',
-      titulo: 'Proyecto 4',
-      imagen: 'assets/mailbox.png',
+      titulo: 'HackerRank',
+      imagen: 'assets/hr2.png',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
       descripcion: 'Texto prueba chiquito',
-      titulo: 'Proyecto 5',
-      imagen: 'assets/mailbox.png',
+      titulo: 'Aprendizaje de python',
+      imagen: 'assets/py.webp',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
       descripcion: 'Texto prueba',
-      titulo: 'Proyecto 6',
+      titulo: 'Fundamentos de programación',
       md :'col-span-2',
-      imagen: 'assets/excel.png',
+      imagen: 'assets/prog3.jpg',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
   ]
