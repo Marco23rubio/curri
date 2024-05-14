@@ -20,39 +20,39 @@ export class ProyectosComponent {
 
   items = [
     {
-      descripcion: 'Texto prueba chiquito',
+      descripcion: 'El código de la página web que estás viendo,desarrollado con Angular y tailwindcss, enfocado en un buen diseño y una buena experiencia de usuario.',
       titulo: 'Curriculum Vitae',
       imagen: 'assets/curri1.jpg',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
-      descripcion: 'Texto prueba',
+      descripcion: 'Proyecto en python para obtener el punto óptimo de los paneles solares para extraer la mayor cantidad de energía a través de cálculos matemáticos y físicos.',
       titulo: 'Paneles solares',
       md :'col-span-2',
       imagen: 'assets/paneles4.jpeg',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
-      descripcion: 'Texto prueba',
+      descripcion: 'Ejercicios enfocados en el análisis de datos con Python, utilizando librerías como Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, etc.',
       titulo: 'Google Coolab y Jupyter Notebooks',
       md :'col-span-2',
       imagen: 'assets/jupyter2.png',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
-      descripcion: 'Texto prueba chiquito',
+      descripcion: 'Resolución de diferentes problemas con Python para la plataforma HackerRank, enfocados en la lógica de programación.',
       titulo: 'HackerRank',
-      imagen: 'assets/hr2.png',
+      imagen: 'assets/hr4.png',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
-      descripcion: 'Texto prueba chiquito',
+      descripcion: 'Repositorio enfocado con el transcurso de aprendizaje en python con diferentes dificultades para mejora del entendimiento del lenguaje.',
       titulo: 'Aprendizaje de python',
       imagen: 'assets/py.webp',
       link: 'https://github.com/Marco23rubio/Cursos'
     },
     {
-      descripcion: 'Texto prueba',
+      descripcion: 'Aqui se encuentran mis inicios , enfocado principalmente en la lógica basada en diagramas de flujo y principios básicos de programación.',
       titulo: 'Fundamentos de programación',
       md :'col-span-2',
       imagen: 'assets/prog3.jpg',
