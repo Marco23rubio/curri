@@ -37,7 +37,7 @@ export class ProyectosComponent {
       titulo: 'Google Coolab y Jupyter Notebooks',
       md :'col-span-2',
       imagen: 'assets/jupyter2.png',
-      link: 'https://github.com/Marco23rubio/Cursos'
+      link: 'https://github.com/Marco23rubio/JupyterNotebooks'
     },
     {
       descripcion: 'Resolución de diferentes problemas con Python para la plataforma HackerRank, enfocados en la lógica de programación.',
