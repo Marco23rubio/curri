@@ -41,7 +41,7 @@ export class ExperienciaComponent {
   items = [
     {
       'empresa': 'Coppel - ',
-      'fecha': 'Mayo 2022/Mayo 2024',
+      'fecha': 'Junio 2022/Mayo 2024',
       'descripcion': [
         'Desarrollo de Frontend web con Angular y TailwindCSS',
         'Desarrollo de Backend con PHP, Spring Boot',
