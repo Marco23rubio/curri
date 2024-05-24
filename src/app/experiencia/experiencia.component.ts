@@ -149,7 +149,7 @@ export class ExperienciaComponent {
         },
         {
           'titulo': 'Causa de desvinculación',
-          'texto': 'La causa por la que terminé con mi primera experiencia laboral se debió a un tema laboral, esto debido a que en mi carrera empecé con las clases en la tarde chocando con el horario de trabajo.',
+          'texto': 'La causa por la que terminé con mi primera experiencia laboral se debió a un tema estudiantil, esto debido a que en mi carrera empecé con las clases en la tarde chocando con el horario de trabajo.',
         },
       ]
     }
