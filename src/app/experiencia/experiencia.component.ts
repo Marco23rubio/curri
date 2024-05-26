@@ -47,6 +47,7 @@ export class ExperienciaComponent {
         'Desarrollo de Backend con PHP, Spring Boot',
         'Desarrollo de aplicaciones de escritorio con C++',
         'Manipulación de datos con PostgreSQL y MySQL',
+        'Uso de metodologías ágiles como Scrum',
       ],
       'acordeon': [
         {
