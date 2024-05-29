@@ -10,10 +10,10 @@
       </div>
 
       <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <a
+        <button
           *ngFor="let item of items"
           class="block rounded-xl border border-gray-700 p-10 shadow-lg transition hover:{{item.hover}}"
-          href="{{item.link}}"
+          (click)="enviarAexp()"
         >
         <img
         src="{{item.imagen}}"
@@ -21,7 +21,7 @@
         alt="{{item.alt}}"
       />
           <h2 class="mt-4 text-xl font-bold text-white">{{item.titulo}}</h2>
-        </a>
+      </button>
       </div>
       <div class="mt-12 text-center">
         <a #downloadLink href="assets/MarcoRubio_CV.pdf" download style="display: none;"></a>

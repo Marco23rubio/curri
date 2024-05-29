@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -14,6 +15,7 @@ import Swal from 'sweetalert2'
 export class MenuComponent {
 
   constructor(
+    private router: Router,
   ) {}
 
   items = [
@@ -62,6 +64,10 @@ export class MenuComponent {
   ]
 
   ngOnInit() {
+  }
+
+  enviarAexp(){
+    this.router.navigate(['/experiencia']);
   }
 
   descargarCV(downloadLink: HTMLAnchorElement) {
