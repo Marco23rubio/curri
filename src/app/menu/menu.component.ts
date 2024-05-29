@@ -27,7 +27,7 @@ export class MenuComponent {
       hover:'hover:border-green-500/10 hover:shadow-green-500'
     },
     {
-      titulo: 'Educación',
+      titulo: 'Educaciónes',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012157/reading_delwlq.png',
       alt: 'Educación',
       link: 'educacion',
