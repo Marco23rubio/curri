@@ -13,14 +13,14 @@
         <button
           *ngFor="let item of items"
           class="block rounded-xl border border-gray-700 p-10 shadow-lg transition hover:{{item.hover}}"
-          (click)="enviarAexp()"
+          (click)="enviarAexp(item.link)"
         >
         <img
         src="{{item.imagen}}"
         class="size-10 text-pink-500"
         alt="{{item.alt}}"
       />
-          <h2 class="mt-4 text-xl font-bold text-white">{{item.titulo}}</h2>
+          <h2 class="mt-4 text-xl font-bold text-white text-left">{{item.titulo}}</h2>
       </button>
       </div>
       <div class="mt-12 text-center">
