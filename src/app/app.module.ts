@@ -7,8 +7,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
+import { AppComponent } from './app.component';
+import { LandingComponent } from './landing/landing.component';
+import { MenuComponent } from './menu/menu.component';
+import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { EducacionComponent } from './educacion/educacion.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { SobremiComponent } from './sobremi/sobremi.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { routes } from './app.routes'; // Importa las rutas
+
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,7 +29,16 @@ import { RouterModule } from '@angular/router';
     RouterOutlet,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot(routes),
+    AppComponent,
+    LandingComponent,
+    MenuComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    CursosComponent,
+    ProyectosComponent,
+    SobremiComponent,
+    ContactoComponent
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
