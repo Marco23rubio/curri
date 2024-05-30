@@ -2,10 +2,10 @@
 <html>
   <head>
     <script type="text/javascript">
-      // Redirigir a la URL original con el hash de la URL actual
-      var path = window.location.pathname.split('/').filter(part => part.length > 0);
-      var newPath = '/curri/' + path.slice(1).join('/');
-      window.location.replace(newPath);
+      // Obtiene la URL original antes de la redirección
+      var path = window.location.pathname + window.location.search + window.location.hash;
+      // Redirige a index.html pero mantiene la URL original
+      window.location.replace('/curri/index.html?redirect=' + encodeURIComponent(path));
     </script>
   </head>
   <body>
