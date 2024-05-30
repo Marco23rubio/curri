@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=./index.html">
+    <script type="text/javascript">
+      // Redirigir a la URL original con el hash de la URL actual
+      var path = window.location.pathname.split('/').filter(part => part.length > 0);
+      var newPath = '/curri/' + path.slice(1).join('/');
+      window.location.replace(newPath);
+    </script>
   </head>
   <body>
   </body>
