@@ -22,31 +22,31 @@ export class SobremiComponent {
 
   items = [
     {
-      imagen: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/v1717364472/canva1_zltvrb.jpg",
       likes: '10',
       titulo: 'Yo',
-      texto: '',
+      texto: 'Soy Marco Rubio, tengo 26 años, vivo en Culiacán,Sinaloa,me gusta la programación y las finanzas bursátiles',
     },
     {
-      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012157/reading_delwlq.png",
+      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/c_scale,h_800,w_800/v1717193583/ruben_xgg1jz.jpg",
       likes: '20',
       titulo: 'Familia',
-      texto: 'Uno de mis pasatiempos es estar con mi familia, o como en el caso de la imagen, con mi ahijado. Aunque llore siempre que lo cargo.',
+      texto: 'Uno de mis pasatiempos es estar con mi familia, o como en el caso de la imagen, con mi ahijado. Aunque llora siempre que lo cargo.',
     },
     {
-      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012159/team-management_vxpepp.png",
+      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/c_scale,h_800,w_800/v1717440260/futbol_cblbaa.jpg",
       likes: '30',
       titulo: 'Deporte',
       texto: 'Algo que siempre me ha gustado es el deporte, sobre todo el fútbol o últimamente también ir al gimnasio antes de empezar el día para estar con energía.',
     },
     {
-      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012158/smash3_h58nic.jpg",
+      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/c_scale,h_800,w_800/v1717012158/smash3_h58nic.jpg",
       likes: '30',
       titulo: 'Juegos',
-      texto: 'Otro de mis pasatiempos, como todo programador, es usar el tiempo libre jugando con mis amigos cosas como Smash, LOL entre otros juegos.',
+      texto: 'Otro de mis pasatiempos, como todo programador, es usar el tiempo libre jugando con mis amigos cosas como Smash, LOL, entre otros juegos.',
     },
     {
-      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012156/programacion_unfvua.jpg",
+      imagen: "https://res.cloudinary.com/dvzucfpbk/image/upload/c_scale,h_800,w_800/v1717012156/programacion_unfvua.jpg",
       likes: '30',
       titulo: 'Programación y finanzas',
       texto: 'En términos laborales, siempre he tenido gusto por los temas de aquí, buscando un punto medio entre ambos, el cual se podría decir que encontré con el análisis de datos.',
