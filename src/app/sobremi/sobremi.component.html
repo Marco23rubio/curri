@@ -242,13 +242,14 @@
       <!--post images-->
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
-        <div *ngFor="let item of items" class="flex-1 text-center px-4 py-2 m-1 relative">
+        <div *ngFor="let item of items" class="flex-1 text-center px-4 py-2 m-1 relative group" (click)="abrirModal(item)">
           <img
-            class="w-full h-full w-full object-cover cursor-pointer transition-opacity duration-300 hover:opacity-60"
-            src="{{item.imagen}}"
-            (click)="abrirModal(item)"
-          />
-        </div>
+          class="w-full h-full object-cover cursor-pointer transition-opacity duration-300 group-hover:opacity-30"
+          src="{{item.imagen}}"
+          
+        />
+        <p class="cursor-pointer absolute inset-0 flex items-center justify-center text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver más</p>
+      </div>
       </div>
 
       <!-- Modal -->
