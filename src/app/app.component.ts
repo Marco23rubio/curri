@@ -14,5 +14,6 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   title = 'cv';
 }

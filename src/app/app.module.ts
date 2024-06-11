@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     RouterOutlet,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
