@@ -1,3 +1,6 @@
 {
-    "greeting": "Hola mundo"
+    "resumen": "Esto es un resumen de mis habilidades y experiencias desarrollado con Angular",
+    "bienvenido": "Bienvenido",
+    "curriculum": " a mi Currículum",
+    "empezemos": "Empecemos"
   }

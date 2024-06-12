@@ -1,3 +1,6 @@
 {
-    "greeting": "Hello world"
+    "resumen": "This is a summary of my skills and experience developed with Angular.",
+    "bienvenido": "Welcome",
+    "curriculum": " to my resume",
+    "empezemos" : "Let's start"
 }

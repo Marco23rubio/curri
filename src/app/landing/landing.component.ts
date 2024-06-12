@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { Router } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
 
 
 @Component({
@@ -13,8 +14,12 @@ import { Router } from '@angular/router';
 })
 export class LandingComponent {
 
+  showDropdown = false;
+  lenguaje = 'Español'
+
   constructor(
     private router: Router,
+    private translationService: TranslationService
   ) {}
 
   enviarAlMenu() {
@@ -22,18 +27,17 @@ export class LandingComponent {
   }
 
   changeLanguage(language) {
-    console.log(`Changing language to ${language}`);
-    fetch(`assets/${language}.json`)
-      .then(response => {
-        console.log(`Fetched assets/${language}.json`, response);
-        return response.json();
-      })
-      .then(translations => {
-        console.log(`Translations:`, translations);
-        document.querySelectorAll('[data-i18n]').forEach((element: HTMLElement) => {
-          console.log(`Updating element:`, element);
-          element.textContent = translations[element.dataset['i18n']];
-        });
-      });
+    this.translationService.changeLanguage(language);
+    this.showDropdown = false;
+    if (language === 'es') {
+      this.lenguaje = 'Español';
+    } else {
+      this.lenguaje = 'English';
+    }
   }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
+
 }
