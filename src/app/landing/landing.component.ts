@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { Router } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
+
 
 
 @Component({
@@ -19,8 +20,17 @@ export class LandingComponent {
 
   constructor(
     private router: Router,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private renderer: Renderer2
   ) {}
+
+  ngOnInit() {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (this.showDropdown) {
+        this.toggleDropdown();
+      }
+    });
+  }
 
   enviarAlMenu() {
     this.router.navigate(['/menu']);
@@ -37,6 +47,7 @@ export class LandingComponent {
   }
 
   toggleDropdown() {
+    event.stopPropagation();
     this.showDropdown = !this.showDropdown;
   }
 
