@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
+import { LenguajeService } from '../services/lenguaje.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,46 +18,50 @@ export class MenuComponent {
 
   constructor(
     private router: Router,
+    private translationService: TranslationService,
+    private lenguajeService: LenguajeService
   ) {}
+
+  idioma:string;
 
   items = [
     {
-      titulo: 'Experiencia laboral',
+      titulo: 'Exp',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012159/training_sa4c51.png',
       alt: 'Experiencia laboral',
       link: '/experiencia',
       hover:'hover:border-green-500/10 hover:shadow-green-500'
     },
     {
-      titulo: 'Educación',
+      titulo: 'Edu',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012157/reading_delwlq.png',
       alt: 'Educación',
       link: '/educacion',
       hover:'hover:border-yellow-500/10 hover:shadow-yellow-500'
     },
     {
-      titulo: 'Cursos y certificaciones',
+      titulo: 'Cur',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012147/certificate_ez94z4.png',
       alt: 'Cursos y certificaciones',
       link: '/cursos',
       hover:'hover:border-pink-500/10 hover:shadow-pink-500'
     },
     {
-      titulo: 'Proyectos personales',
+      titulo: 'Proy',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012160/web-programming_vixtdx.png',
       alt: 'Proyectos personales',
       link: '/proyectos',
       hover:'hover:border-red-500/10 hover:shadow-red-500'
     },
     {
-      titulo: 'Acerca de mí',
+      titulo: 'sobre',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012160/young-man_wmt5wr.png',
       alt:'Acerca de mí',
       link: '/sobremi',
       hover:'hover:border-orange-500/10 hover:shadow-orange-500'
     },
     {
-      titulo: 'Contacto',
+      titulo: 'cont',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012147/chat_ec0e9z.png',
       alt: 'Contacto',
       link: '/contacto',
@@ -64,17 +70,33 @@ export class MenuComponent {
   ]
 
   ngOnInit() {
+    const savedLanguage = localStorage.getItem('language');
+
+    if (savedLanguage) {
+      this.idioma = savedLanguage;
+    } else {
+      this.idioma = this.lenguajeService.getLanguage();
+    }
+    this.changeLanguage(this.idioma);
+    
   }
 
   enviarAexp(link: string){
     this.router.navigate([link]);
   }
 
-  descargarCV(downloadLink: HTMLAnchorElement) {
+  descargarCV(downloadLink: HTMLAnchorElement,downloadLink2: HTMLAnchorElement) {
     try {
-      downloadLink.click();
+      let title = '';
+      if(this.idioma === 'es'){
+        title = 'Gracias por tu interés, descarga finalizada.'
+        downloadLink.click();
+      }else{
+        title = 'Thanks for your interest, download finished.'
+        downloadLink2.click();
+      }
       Swal.fire({
-        title: 'Gracias por tu interés, descarga finalizada.',
+        title: title,
         icon: 'success',
         iconColor: 'white',
         background: '#1E3A8A',
@@ -91,4 +113,10 @@ export class MenuComponent {
       });
     }
   }
+
+  changeLanguage(language) {
+    this.translationService.changeLanguage(language);
+    localStorage.setItem('language', language);
+  }
+
 }

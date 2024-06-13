@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
+import { LenguajeService } from '../services/lenguaje.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -15,12 +17,24 @@ export class ExperienciaComponent {
 
   constructor(
     private router: Router,
+    private translationService: TranslationService,
+    private lenguajeService: LenguajeService
   ) {}
 
+  idioma:string;
   acordeonAbierto: boolean[] = [];
   acordeonInternoAbierto: boolean[][] = [];
   
   ngOnInit() {
+    const savedLanguage = localStorage.getItem('language');
+
+    if (savedLanguage) {
+      this.idioma = savedLanguage;
+    } else {
+      this.idioma = this.lenguajeService.getLanguage();
+    }
+    this.changeLanguage(this.idioma);
+
     this.items.forEach((item, i) => {
       this.acordeonAbierto[i] = false;
       this.acordeonInternoAbierto[i] = [];
@@ -28,6 +42,9 @@ export class ExperienciaComponent {
         this.acordeonInternoAbierto[i][j] = false;
       });
     });
+
+    console.log(this.idioma);
+    
   }
 
   toggleAcordeon(i: number) {
@@ -36,6 +53,11 @@ export class ExperienciaComponent {
 
   toggleAcordeonInterno(i: number, j: number) {
     this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
+  }
+
+  changeLanguage(language) {
+    this.translationService.changeLanguage(language);
+    localStorage.setItem('language', language);
   }
 
   items = [

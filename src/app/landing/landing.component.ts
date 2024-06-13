@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { Router } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
+import { LenguajeService } from '../services/lenguaje.service';
 
 
 
@@ -21,10 +22,16 @@ export class LandingComponent {
   constructor(
     private router: Router,
     private translationService: TranslationService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private lenguajeService: LenguajeService
   ) {}
 
   ngOnInit() {
+    const savedLanguage = localStorage.getItem('language');
+    
+    if (savedLanguage) {
+      this.changeLanguage(savedLanguage);
+    }
     this.renderer.listen('window', 'click', (e: Event) => {
       if (this.showDropdown) {
         this.toggleDropdown();
@@ -37,6 +44,7 @@ export class LandingComponent {
   }
 
   changeLanguage(language) {
+    this.lenguajeService.setLanguage(language);
     this.translationService.changeLanguage(language);
     this.showDropdown = false;
     if (language === 'es') {
@@ -44,6 +52,7 @@ export class LandingComponent {
     } else {
       this.lenguaje = 'English';
     }
+    localStorage.setItem('language', language);
   }
 
   toggleDropdown() {

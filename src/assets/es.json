@@ -2,5 +2,17 @@
     "resumen": "Esto es un resumen de mis habilidades y experiencias desarrollado con Angular",
     "bienvenido": "Bienvenido",
     "curriculum": " a mi Currículum",
-    "empezemos": "Empecemos"
+    "empezemos": "Empecemos",
+    "saludo":"Hola , mi nombre es Marco Rubio",
+    "presentacion": "He elaborado este currículum con el propósito de asegurar una oportunidad para desarrollarme como analista de datos. Estoy emocionado por la posibilidad de ser considerado para este puesto.",
+    "descarga": "Descargar CV",
+    "Exp": "Experiencia Laboral",
+    "Edu": "Educación",
+    "Cur": "Cursos",
+    "Proy": "Proyectos",
+    "sobre": "Sobre mi",
+    "cont": "Contacto",
+    "empleos": "Aquí encontrarás los diferentes <span class=\"text-green-400\">empleos</span>, que he tenido a lo largo del tiempo, además de explicar las <span class=\"text-green-400\">actividades</span>, que desarrollé, las <span class=\"text-green-400\">fortalezas</span> que obtuve gracias a ellos y, por último, las circunstancias que llevaron a la finalización de cada relación laboral.",
+    "regresar": "Regresar",
+    "tit_exp":"Experiencia <span class=\"text-green-500\">Laboral</span>"
   }

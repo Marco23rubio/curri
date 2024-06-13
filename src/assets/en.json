@@ -2,5 +2,19 @@
     "resumen": "This is a summary of my skills and experience developed with Angular.",
     "bienvenido": "Welcome",
     "curriculum": " to my resume",
-    "empezemos" : "Let's start"
+    "empezemos" : "Let's start",
+    "saludo":"Hello, I'm Marco Rubio",
+    "presentacion" : "I have crafted this resume with the aim of securing an opportunity to grow and develop as a data analyst. I am thrilled about the prospect of being considered for this position.",
+    "descarga": "Download CV",
+    "aboutMeTitle": "About me",
+    "contactTitle": "Contact",
+    "Exp": "Work Experience",
+    "Edu": "Education",
+    "Cur": "Courses",
+    "Proy": "Projects",
+    "sobre": "About Me",
+    "cont": "Contact",
+    "empleos": "Here you will find the different <span class=\"text-green-400\">jobs</span> I've had over time, in addition to explaining the <span class=\"text-green-400\">activities</span> I developed, the <span class=\"text-green-400\">strengths</span> I gained from them, and finally, the circumstances that led to the end of each working relationship.",
+    "regresar": "Go Back",
+    "tit_exp":"Work <span class=\"text-green-500\">Experience</span>"
 }
