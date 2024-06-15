@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
+import { LenguajeService } from '../services/lenguaje.service';
 
 @Component({
   selector: 'app-educacion',
@@ -15,56 +17,73 @@ export class EducacionComponent {
 
   constructor(
     private router: Router,
+    private translationService: TranslationService,
+    private lenguajeService: LenguajeService
   ) {}
 
+  idioma:string;
+
   ngOnInit() {
+    const savedLanguage = localStorage.getItem('language');
+
+    if (savedLanguage) {
+      this.idioma = savedLanguage;
+    } else {
+      this.idioma = this.lenguajeService.getLanguage();
+    }
+    this.changeLanguage(this.idioma);
+    
   }
 
+  changeLanguage(language) {
+    this.translationService.changeLanguage(language);
+    localStorage.setItem('language', language);
+  }
 
   items = [
     {
         'escuela': 'UVM - ',
-        'fecha': 'Septiembre 2023/Actualidad',
+        'fecha': 'fec7',
         'descripcion': [
-            'Universidad del Valle de México',
-            'Actualmente cursando la maestría en Ciencia de Datos',
-            'El aprendizaje se lleva a cabo a través de la modalidad online',
-            'Aprendizaje sobre matemáticas para las ciencias de datos y los diseños de experimentos',
-            'Utilización de bibliotecas en Python para el análisis de datos',
+            'pd0',
+            'pd1',
+            'pd2',
+            'pd3',
+            'pd4',
         ]
     },
     {
         'escuela': 'Platzi - ',
-        'fecha': 'Febrero 2022/Agosto 2023',
+        'fecha': 'fec8',
         'descripcion': [
-            'Escuela donde empecé con mis primeros pasos en análisis de datos',
-            'Conocimiento del lenguaje de programación Python',
-            'Cursos sobre estadística, probabilidad y matemáticas aplicadas'
+            'pd5',
+            'pd6',
+            'pd7',
         ],
     },
     {
         'escuela': 'Universidad Tecmilenio - ',
-        'fecha': 'Junio 2017/Julio 2021',
+        'fecha': 'fec9',
         'descripcion': [
-            'Estudio Administración Financiera',
-            'Obtuve las herramientas para el análisis de empresas',
-            'Gracias a un profesor me introduje en el mundo de las inversiones bursátiles',
-            'Aproveché la facilidad de obtener prácticas para trabajar en diferentes empresas',
-            'Me gradué con un promedio de 93',
+            'pd8',
+            'pd9',
+            'pd10',
+            'pd11',
+            'pd12',
         ],
         'acordeon': [
             {
-                'titulo': '¿Por qué paso 1 año entre la universidad y la preparatoria?',
-                'texto': 'Antes de entrar a estudiar finanzas, asistí a otra universidad sin tener seguridad de lo que deseaba hacer. Luego de un año en esta otra escuela, tomé la decisión de estudiar finanzas en TecMilenio.',
+                'titulo': 'tedu',
+                'texto': 'tedu1',
             }
         ]
     },
     {
         'escuela': 'Colegio Sinaloa Horizontes - ',
-        'fecha': 'Junio 2013/Agosto 2016',
+        'fecha': 'fec10',
         'descripcion': [
-            'Escuela donde cursé la preparatoria',
-            'Estudié durante dos años en la especialidad de RRHH',
+            'pd13',
+            'pd14',
         ],
     }
 ]

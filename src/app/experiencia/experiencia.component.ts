@@ -41,10 +41,7 @@ export class ExperienciaComponent {
       item.acordeon.forEach((_, j) => {
         this.acordeonInternoAbierto[i][j] = false;
       });
-    });
-
-    console.log(this.idioma);
-    
+    });    
   }
 
   toggleAcordeon(i: number) {
