@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import { LenguajeService } from '../services/lenguaje.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-contacto',
@@ -21,7 +23,10 @@ import { Router } from '@angular/router';
 })
 export class ContactoComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private translationService: TranslationService,
+    private lenguajeService: LenguajeService
+  ) {
     this.botonselecto = "whatsapp";
   }
 
@@ -31,20 +36,55 @@ export class ContactoComponent {
   mensaje: string;
   botonselecto:string;
   loading = false;
+  idioma:string;
 
   ngOnInit(): void {
+    const savedLanguage = localStorage.getItem('language');
+
+    if (savedLanguage) {
+      this.idioma = savedLanguage;
+    } else {
+      this.idioma = this.lenguajeService.getLanguage();
+    }
+    this.changeLanguage(this.idioma);
   }
 
-
+  changeLanguage(language) {
+    this.translationService.changeLanguage(language);
+    localStorage.setItem('language', language);
+  }
+  
   async enviarMensaje(form: NgForm) {
+    let titlew = '';
+    let textw = '';
+    let titlec = '';
+    let textc = '';
+    let texte = '';
+    let textf = '';
+    if(this.idioma == 'es'){
+      titlew = 'Whatsapp enviado!';
+      textw = 'Pronto respondere, gracias por contactarme';
+      titlec = 'Correo enviado!';
+      textc = 'Aparecera en tu bandeja de entrada despues de recibir respuesta, gracias por contactarme';
+      texte = 'Hubo un error al enviar el correo';
+      textf = 'Favor de verificar los campos, parece que hay campos vacios o erroneos';
+    }
+    else{
+      titlew = 'Whatsapp sent!';
+      textw = 'I will respond soon, thank you for contacting me';
+      titlec = 'Email sent!';
+      textc = 'It will appear in your inbox after receiving a response, thank you for contacting me';
+      texte = 'There was an error sending the email';
+      textf = 'Please check the fields, it seems that there are empty or incorrect fields';
+    }
     form.control.markAllAsTouched();
     if(form.valid){
       if(this.botonselecto == "whatsapp"){
         let whatsappUrl = `https://wa.me/5216672528776?text=${encodeURIComponent('Mi nombre es '+this.nombre+' '+this.apellido +' '+ this.mensaje)}`;
         window.open(whatsappUrl, '_blank');
         Swal.fire({
-          title: 'Whatsapp enviado!',
-          text: 'Pronto respondere, gracias por contactarme',
+          title: titlew,
+          text: textw,
           icon: 'success',
           iconColor: 'green',
           background: '#1E3A8A',
@@ -62,8 +102,8 @@ export class ContactoComponent {
         try {
           await emailjs.send('service_a26ggfa', 'template_2rur26h', templateParams, 'x2Jdsv2Z8pN7-PxpY');
           Swal.fire({
-            title: 'Correo enviado!',
-            text: 'Aparecera en tu bandeja de entrada despues de recibir respuesta, gracias por contactarme',
+            title: titlec,
+            text: textc,
             icon: 'success',
             iconColor: 'green',
             background: '#1E3A8A',
@@ -72,7 +112,7 @@ export class ContactoComponent {
         } catch (error) {
           Swal.fire({
             title: 'Error!',
-            text: 'Hubo un error al enviar el correo',
+            text: texte,
             icon: 'error',
           });
         } finally {
@@ -84,7 +124,7 @@ export class ContactoComponent {
   else{
       Swal.fire({
         title: 'UPS!',
-        text: 'Favor de verificar los campos, parece que hay campos vacios o erroneos',
+        text: textf,
         icon: 'warning',
         iconColor:'yellow',
         background: '#1E3A8A',
