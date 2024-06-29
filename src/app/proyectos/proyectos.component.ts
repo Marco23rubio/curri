@@ -23,6 +23,8 @@ export class ProyectosComponent {
   ) {}
 
   idioma:string;
+  loading = true;
+  imagesLoaded: number = 0;
 
   ngOnInit() {
     const savedLanguage = localStorage.getItem('language');
@@ -33,6 +35,20 @@ export class ProyectosComponent {
       this.idioma = this.lenguajeService.getLanguage();
     }
     this.changeLanguage(this.idioma);
+    this.preloadImages();
+  }
+
+  preloadImages() {
+    this.items.forEach((item) => {
+      const img = new Image();
+      img.onload = () => {
+        this.imagesLoaded++;
+        if (this.imagesLoaded === this.items.length) {
+          this.loading = false;
+        }
+      };
+      img.src = item.imagen;
+    });
   }
 
   changeLanguage(language) {

@@ -24,6 +24,8 @@ export class SobremiComponent {
   showModal=false;
   itemSeleccionado = null;
   idioma:string;
+  loading = true;
+  imagesLoaded: number = 0;
 
   ngOnInit() {
     const savedLanguage = localStorage.getItem('language');
@@ -34,11 +36,25 @@ export class SobremiComponent {
       this.idioma = this.lenguajeService.getLanguage();
     }
     this.changeLanguage(this.idioma);
+    this.preloadImages();
   }
 
   changeLanguage(language) {
     this.translationService.changeLanguage(language);
     localStorage.setItem('language', language);
+  }
+
+  preloadImages() {
+    this.items.forEach((item) => {
+      const img = new Image();
+      img.onload = () => {
+        this.imagesLoaded++;
+        if (this.imagesLoaded === this.items.length) {
+          this.loading = false;
+        }
+      };
+      img.src = item.imagen;
+    });
   }
 
   items = [
