@@ -8,26 +8,27 @@
     <p data-i18n="empleos" class="mt-10 text-xl">Aquí encontrarás los diferentes <span class="text-green-400">empleos</span>, que he tenido a lo largo del tiempo, además de explicar las <span class="text-green-400">actividades</span>, que desarrollé, las <span class="text-green-400">fortalezas</span> que obtuve gracias a ellos y, por último, las circunstancias que llevaron a la finalización de cada relación laboral.</p>
     <br>
 
-    <section *ngFor="let item of items; let i = index" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
+    <section *ngFor="let item of itemsActuales; let i = index" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
       <details class="group">
         <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeon(i)">
-          <span class="text-lg font-bold md:text-3xl md:text-current">{{item.empresa}} <span attr.data-i18n="{{item.fecha}}"class="md:text-2xl md:text-current font-bold text-base"></span></span>
+          <span class="text-lg font-bold md:text-3xl md:text-current">{{item.empresa}} <span class="md:text-2xl md:text-current font-bold text-base">{{item.fecha}}</span></span>
           <span [class.rotate-180]="acordeonAbierto[i]" class="transition">
             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
           </span>
         </summary>
         <div class="mt-2" [class.animate-fadeIn]="acordeonAbierto[i]">
           <ul class="mt-6 md:text-lg text-sm list-disc list-outside ml-6">
-            <li *ngFor="let punto of item.descripcion" attr.data-i18n="{{punto}}"></li>
+            <li *ngFor="let punto of item.descripcion">{{punto}}</li>
             <li *ngFor="let acordeonItem of item.acordeon; let j = index"> 
               <details class="group mt-1">
                 <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeonInterno(i, j)">
-                  <span attr.data-i18n="{{acordeonItem.titulo}}"></span>
+                  <span>{{acordeonItem.titulo}}</span>
                   <span [class.rotate-180]="acordeonInternoAbierto[i][j]" class="transition">
                     <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                   </span>
                 </summary>
-                <p attr.data-i18n="{{acordeonItem.texto}}" class="mt-2 text-sm md:text-lg" [class.animate-fadeIn]="acordeonInternoAbierto[i][j]">
+                <p class="mt-2 text-sm md:text-lg" [class.animate-fadeIn]="acordeonInternoAbierto[i][j]">
+                  {{acordeonItem.texto}}
                 </p>
               </details>
             </li>
@@ -42,7 +43,7 @@
         (click)="enviarAlMenu()"
         class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none"
       >
-        
+      Regresar
       </button>
     </div>
   </article>

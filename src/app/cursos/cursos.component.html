@@ -36,10 +36,12 @@
                                         src="{{item.imagen}}"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
                                     <div>
-                                        <h3 attr.data-i18n="{{item.titulo}}" class="text-lg font-semibold text-white"></h3>
+                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
+                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-lg" attr.data-i18n="{{item.descripcion}}"></p>
+                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
+                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
                             </div>
                         </a>
                     </div>
@@ -59,10 +61,12 @@
                                         src="{{item.imagen}}"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-white" attr.data-i18n="{{item.titulo}}" ></h3>
+                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
+                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-lg" attr.data-i18n="{{item.descripcion}}"></p>
+                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
+                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
                             </div>
                         </a>
                     </div>
@@ -81,10 +85,12 @@
                                         src="{{item.imagen}}"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-white" attr.data-i18n="{{item.titulo}}" ></h3>
+                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
+                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-300 text-lg" attr.data-i18n="{{item.descripcion}}"></p>
+                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
+                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
                             </div>
                         </a>
                     </div>

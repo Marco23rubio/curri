@@ -8,25 +8,26 @@
       <p class="mt-10 text-2xl" data-i18n="edutext">Aquí observarás las diferentes <span class="text-yellow-400">instituciones</span> a las que he asistido durante mi vida <span class="text-yellow-400">escolar</span></p>
       <br>
   
-      <section *ngFor="let item of items" class="mt-4 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg max-w-7xl ">
+      <section *ngFor="let item of itemsActuales" class="mt-4 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg max-w-7xl ">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h2 class="text-lg md:text-3xl font-bold ">{{item.escuela}} <span attr.data-i18n="{{item.fecha}}" class="text-base md:text-2xl font-bold "></span></h2>
+            <h2 class="text-lg md:text-3xl font-bold ">{{item.escuela}} <span class="text-base md:text-2xl font-bold ">{{item.fecha}}</span></h2>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <ul class="mt-6 text-sm md:text-lg list-disc list-outside ml-6 group-open:animate-fadeIn">
-            <li *ngFor="let punto of item.descripcion" attr.data-i18n="{{punto}}"></li>
+            <li *ngFor="let punto of item.descripcion">{{punto}}</li>
           <li *ngFor="let acordeonItem of item.acordeon"> 
               <details class="group mt-1">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                  <span attr.data-i18n="{{acordeonItem.titulo}}"></span>
+                  <span >{{acordeonItem.titulo}}</span>
                   <span class="transition">
                     <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                   </span>
                 </summary>
-                <p class="mt-2 text-sm md:text-base group-open:animate-fadeIn" attr.data-i18n="{{acordeonItem.texto}}">
+                <p class="mt-2 text-sm md:text-base group-open:animate-fadeIn" >
+                  {{acordeonItem.texto}}
                 </p>
               </details>
             </li>

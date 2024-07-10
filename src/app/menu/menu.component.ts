@@ -26,42 +26,48 @@ export class MenuComponent {
 
   items = [
     {
-      titulo: 'Exp',
+      titulo: 'Experiencia Laboral',
+      tituloIngles: 'Work Experience',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012159/training_sa4c51.png',
       alt: 'Experiencia laboral',
       link: '/experiencia',
       hover:'hover:border-green-500/10 hover:shadow-green-500'
     },
     {
-      titulo: 'Edu',
+      titulo: 'Educación',
+      tituloIngles: 'Education',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012157/reading_delwlq.png',
       alt: 'Educación',
       link: '/educacion',
       hover:'hover:border-yellow-500/10 hover:shadow-yellow-500'
     },
     {
-      titulo: 'Cur',
+      titulo: 'Cursos y certificaciones',
+      tituloIngles: 'Courses and certifications',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012147/certificate_ez94z4.png',
       alt: 'Cursos y certificaciones',
       link: '/cursos',
       hover:'hover:border-pink-500/10 hover:shadow-pink-500'
     },
     {
-      titulo: 'Proy',
+      titulo: 'Proyectos personales',
+      tituloIngles: 'Personal projects',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012160/web-programming_vixtdx.png',
       alt: 'Proyectos personales',
       link: '/proyectos',
       hover:'hover:border-red-500/10 hover:shadow-red-500'
     },
     {
-      titulo: 'sobre',
+      titulo: 'Sobre Mi',
+      tituloIngles: 'About Me',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012160/young-man_wmt5wr.png',
       alt:'Acerca de mí',
       link: '/sobremi',
       hover:'hover:border-orange-500/10 hover:shadow-orange-500'
     },
     {
-      titulo: 'cont',
+      titulo: 'contacto',
+      tituloIngles: 'Contact',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012147/chat_ec0e9z.png',
       alt: 'Contacto',
       link: '/contacto',
