@@ -1,297 +1,231 @@
-<div *ngIf="loading" class="fixed top-0 left-0 z-50 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50">
-  <div class="flex flex-col items-center justify-center">
-    <div class="w-32 h-32 border-t-8 border-blue-500 rounded-full animate-spin"></div>
-    <p class="mt-4 text-white text-2xl">Loading...</p>
-  </div>
-</div>
-<div class="flex flex-col bg-gray-900 min-h-screen w-full">
-    <nav class="bg-gray-800 shadow px-48 border-b border-gray-400">
-      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-        <div class="flex flex-wrap justify-between h-16">
-          <div class="flex px-2 lg:px-0 justify-center lg:justify-start">
-            <div class="flex-shrink-0 flex items-center">
+
+
+<div class="flex flex-col bg-gray-900 text-white min-h-screen w-full overflow-x-hidden">
+  <div class="flex-grow mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+
+    <div class="relative rounded-3xl border border-white/10 bg-gray-950/80 px-4 py-5 sm:px-6 sm:py-7 lg:px-8 lg:py-8 shadow-2xl shadow-black/50 overflow-hidden">
+
+      <div class="hidden md:block pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="hidden md:block pointer-events-none absolute -bottom-32 -left-24 h-64 w-64 rounded-full bg-green-500/10 blur-3xl"></div>
+
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-4 py-1 text-xs font-medium text-blue-200">
+        <span class="h-2 w-2 rounded-full bg-green-400 animate-pulse" ></span>
+        <span data-i18n="sm_tit">Sobre mí · Perfil profesional</span>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div class="flex justify-center">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-green-500/40 via-blue-500/30 to-purple-500/40 blur-xl opacity-60"></div>
+
+            <div class="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-gray-950/60">
               <img
-                class="h-10 w-auto cursor-pointer"
-                src="https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012152/logo3_eybwsk.png"
-                alt="Workflow logo"
-                (click)="enviarAlMenu()"
+                src="https://res.cloudinary.com/dvzucfpbk/image/upload/v1717364472/canva1_zltvrb.jpg"
+                alt="Foto de perfil"
+                class="h-full w-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
-          <div class="flex-1 flex items-center justify-center px-2 lg:ml-12 lg:flex">
-            <div class="w-full lg:max-w-xs lg:block hidden">
-              <label for="search" class="sr-only">Buscar</label>
-              <div class="relative">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg class="h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <input
-                  id="search"
-                  class="block w-full pl-10 pr-3 py-2 border border-gray-400 rounded-md leading-5 bg-gray-100 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:shadow-outline-blue sm:text-sm transition duration-150 ease-in-out"
-                  placeholder="Buscar"
-                  type="search"
-                />
-              </div>
+        </div>
+
+        <div class="space-y-5">
+          <div class="space-y-3">
+            <h1 class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-300 bg-clip-text 
+                       text-3xl sm:text-4xl font-extrabold text-transparent leading-tight pb-1"
+                       data-i18n="quien_soy">
+              ¿Quién soy?
+            </h1>
+
+            <p class="text-sm sm:text-base text-gray-300" data-i18n="text_quien">
+              Soy un científico de datos y financiero, enfocado en utilizar la inteligencia artificial para resolver problemas complejos y aportar valor a las organizaciones. Me apasiona el análisis de datos, la estadística y la programación.
+              Cuento con experiencia en proyectos de análisis de datos, visualización y modelado predictivo, utilizando herramientas como Python, R y SQL y trabajando en incluir nuevas herramientas de IA para optimizar procesos como TensorFlow y PyTorch.
+            </p>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2">
+
+  <!-- HABILIDADES BLANDAS -->
+  <div class="space-y-2">
+
+    <!-- Título -->
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">
+      <span *ngIf="idioma === 'es'">Habilidades blandas</span>
+      <span *ngIf="idioma === 'en'">Soft skills</span>
+    </h2>
+
+    <ul class="space-y-1.5 text-sm text-gray-200">
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400"></span>
+        <span *ngIf="idioma === 'es'">Manejo de equipos y diferentes perfiles profesionales</span>
+        <span *ngIf="idioma === 'en'">Team management and collaboration with diverse profiles</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400"></span>
+        <span *ngIf="idioma === 'es'">Paciencia y colaboración efectiva</span>
+        <span *ngIf="idioma === 'en'">Patience and effective collaboration</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400"></span>
+        <span *ngIf="idioma === 'es'">Curiosidad analítica y aprendizaje continuo</span>
+        <span *ngIf="idioma === 'en'">Analytical curiosity and continuous learning</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400"></span>
+        <span *ngIf="idioma === 'es'">Manejo de estrés y resiliencia</span>
+        <span *ngIf="idioma === 'en'">Stress management and resilience</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- EXPERIENCIA Y ENFOQUE -->
+  <div class="space-y-2">
+
+    <!-- Título -->
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">
+      <span *ngIf="idioma === 'es'">Experiencia y enfoque</span>
+      <span *ngIf="idioma === 'en'">Experience and focus</span>
+    </h2>
+
+    <ul class="space-y-1.5 text-sm text-gray-200">
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <span *ngIf="idioma === 'es'">Desarrollo web front-end y back-end</span>
+        <span *ngIf="idioma === 'en'">Front-end and back-end web development</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <span *ngIf="idioma === 'es'">Preparación y limpieza de datos</span>
+        <span *ngIf="idioma === 'en'">Data preparation and cleaning</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <span *ngIf="idioma === 'es'">Desarrollo de análisis de datos</span>
+        <span *ngIf="idioma === 'en'">Data analysis development</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <span *ngIf="idioma === 'es'">Modelado predictivo y machine learning</span>
+        <span *ngIf="idioma === 'en'">Predictive modeling and machine learning</span>
+      </li>
+
+      <li class="flex items-start gap-2">
+        <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <span *ngIf="idioma === 'es'">Negociación de instrumentos financieros</span>
+        <span *ngIf="idioma === 'en'">Financial instruments trading</span>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Objetivos</h2>
+
+            <p class="text-sm sm:text-base text-gray-300" data-i18n="text_obj">
+              Usar la IA y el análisis de datos para resolver problemas enfocados al área financiera, optimizando procesos que permitan una mejor toma de decisiones, con un enfoque en el control de riesgos y la maximización de beneficios.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'es'">
+                Desarrollo full-stack
+              </span>
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'en'">
+                Full-stack development
+              </span>
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'es'">
+                Científico de Datos
+              </span>
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'en'">
+                Data Scientist
+              </span>
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'es'">
+                Machine Learning
+              </span>
+              <span class="inline-flex items-center rounded-full border border-gray-700 bg-gray-800/70 px-3 py-1 text-[11px] font-medium text-gray-200" *ngIf="idioma === 'en'">
+                Machine Learning
+              </span>
             </div>
           </div>
 
-          <!-- icons-->
-          <div class="hidden lg:block lg:ml-4 lg:flex lg:items-center">
-            <button
-              class="flex-shrink-0 p-1 border-transparent text-gray-100 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </button>
-
-            <button
-              class="flex-shrink-0 p-1 border-transparent text-gray-100 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"
-                />
-              </svg>
-            </button>
-
-            <button
-              class="flex-shrink-0 p-1 border-transparent text-gray-100 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            </button>
-
-            <button
-              class="flex-shrink-0 p-1 border-transparent text-gray-100 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </button>
-
-            <!-- Profile dropdown -->
-            <div class="ml-4 relative flex-shrink-0">
-              <div>
-                <button
-                  class="flex rounded-full border-gray-700 transition duration-150 ease-in-out"
-                  id="user-menu"
-                  aria-label="User menu"
-                  aria-haspopup="true"
-                >
-                  <img
-                    class="h-8 w-8 rounded-full"
-                    src="https://res.cloudinary.com/dvzucfpbk/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1717195327/perfil2_a9uh7n.jpg"
-                    alt
-                  />
-                </button>
-              </div>
-            </div>
+          <div class="space-y-2">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'es'">Logros profesionales</h2>
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'en'">Professional Achievements</h2>
+            <p class="text-sm sm:text-base text-gray-300" data-i18n="text_logros">
+              Desarrollo de intranet para automatizar procesos financieros y de reporting, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos.
+            </p>
           </div>
         </div>
       </div>
-    </nav>
 
-    <!--body start-->
-    <!--profile data-->
-    <div class="flex flex-col md:flex-row bg-gray-900 items-center justify-center mt-8 mb-4">
-    
-        <button
-        class="flex rounded-full"
-        id="user-menu"
-        aria-label="User menu"
-        aria-haspopup="true"
-      >
-        <img
-          class="h-40 w-40 rounded-full"
-          src="https://res.cloudinary.com/dvzucfpbk/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1717195327/perfil2_a9uh7n.jpg"
-          alt="Perfil"
-        />
-      </button>
-        <div class="text-left pl-4 pt-3">
-          <span class="text-gray-100 text-3xl mr-2">Mar_9802_rubio</span>
-          <span class="text-base font-semibold text-gray-100 mr-2">
-            <button
-            data-i18n="perfil"
-              class="bg-gray-600 hover:bg-blue-500 text-gray-100 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded"
-            ></button>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        <div class="flex flex-col text-center sm:text-left">
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">
+            Experiencia
           </span>
-          <span class="text-base font-semibold text-gray-700">
-            <button
-              class="p-1 border-transparent text-gray-100 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-8 w-8"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                />
-                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </button>
-          </span>
-          <div class="mt-4">
-            <span class="text-base font-semibold text-gray-100 mr-2">
-              <b>5</b> posts
-            </span>
-            <span class="text-base font-semibold text-gray-100 mr-2">
-              <b>865</b> followers
-            </span>
-            <span class="text-base font-semibold text-gray-100">
-              <b>1</b> following
-            </span>
-          </div>
-          <div class="mt-4">
-            <p
-              class="text-base font-medium text-blue-500 mr-2 mb-3"
-              data-i18n="infoperfil"
-            ></p>
-            <a
-              href="https://www.linkedin.com/in/marco-antonio-rubio-martinez-77ab3716a/"
-              class="text-base font-medium text-gray-100 hover:text-blue-500 hover:underline mr-2"
-              target="_blank"
-              rel="noopener noreferrer">
-              https://www.linkedin.com/in/marco-antonio-rubio-martinez-77ab3716a/
-            </a>
-          </div>
-          <button (click)="enviarAlMenu()" class="mt-3 bg-gray-600 hover:bg-blue-500 text-gray-100 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded"
-          data-i18n="regresar"> Regresar </button>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'es'">5+ años</span>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'en'">5+ years</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'es'">Trabajando con desarrollo, tecnología y finanzas</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'en'">Working with development, technology, and finance</span>
         </div>
+
+        <div class="flex flex-col text-center sm:text-left">
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'es'">
+            Proyectos
+          </span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'en'">
+            Projects
+          </span>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'es'">10+ proyectos</span>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'en'">10+ projects</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'es'">Entre personales, académicos y colaborativos</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'en'">Among personal, academic, and collaborative</span>
+        </div>
+
+        <div class="flex flex-col text-center sm:text-left">
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'es'">
+            Enfoque
+          </span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400" *ngIf="idioma === 'en'">
+            Focus
+          </span>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'es'">Liderazgo y comunicación</span>
+          <span class="text-xl font-semibold text-white" *ngIf="idioma === 'en'">Leadership and communication</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'es'">Desarrollo de habilidades interpersonales y gestión de equipos</span>
+          <span class="text-xs text-gray-400" *ngIf="idioma === 'en'">Development of interpersonal skills and team management</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button
+          (click)="enviarAlMenu()"
+          class="inline-flex items-center gap-2 rounded-full 
+                 bg-blue-800 px-6 py-3 text-sm sm:text-base font-semibold text-white
+                 border border-blue-500 shadow-md 
+                 transition-all duration-200
+                 hover:bg-blue-700 hover:border-blue-600 hover:shadow-blue-500/30"
+                 data-i18n="regresar"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 19l-7-7 7-7" />
+          </svg>
+          Regresar
+        </button>
+      </div>
+
     </div>
 
-      <!--status show icon-->
-
-      <hr class="border-gray-500 mt-6" />
-
-      <!--post icon and title-->
-      <div class="flex flex-row mt-4 justify-center mr-16">
-        <div class="flex text-gray-700 text-center py-2 m-2 pr-5">
-          <div class="flex inline-flex">
-            <button
-              class="border-transparent text-gray-800 rounded-full hover:text-blue-600 focus:outline-none focus:text-gray-600"
-              aria-label="Notifications"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                stroke="white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="flex inline-flex ml-2 mt-1">
-            <h3 class="text-sm font-bold text-gray-100 mr-2">POSTS</h3>
-          </div>
-        </div>
-      </div>
-
-      <!--post images-->
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
-        <div *ngFor="let item of items" class="flex-1 text-center px-4 py-2 m-1 relative group" (click)="abrirModal(item)">
-          <img
-          class="w-full h-full object-cover cursor-pointer transition-opacity duration-300 group-hover:opacity-30"
-          src="{{item.imagen}}"
-          
-        />
-        <p class="cursor-pointer absolute inset-0 flex items-center justify-center text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        data-i18n="vermas"> Ver más</p>
-      </div>
-      </div>
-
-      <!-- Modal -->
-      <div class="fixed z-10 inset-0 overflow-y-auto" *ngIf="showModal">
-        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-          </div>
-      
-          <!-- Modal content -->
-          <div class="inline-block align-bottom bg-gray-900 rounded-lg text-gray-100 text-left overflow-hidden shadow-xl transform transition-all sm:mt-[20vh] sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
-            <button type="button" class="absolute top-0 right-0 m-2 text-gray-600 hover:text-gray-700 focus:outline-none" (click)="showModal = false">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-            <section class="overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3 p-4">
-              <img
-                alt=""
-                src="{{itemSeleccionado?.imagen}}"
-                class="h-32 w-full object-cover md:h-full"
-              />
-              <div class="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
-                <p *ngIf="idioma === 'es'" class="text-2xl font-semibold uppercase tracking-widest">{{itemSeleccionado?.titulo}}</p>
-                <p *ngIf="idioma === 'en'" class="text-2xl font-semibold uppercase tracking-widest">{{itemSeleccionado?.tituloi}}</p>
-                <p class="mt-6">
-                  <span *ngIf="idioma === 'es'" class="mt-2 text-lg">{{itemSeleccionado?.texto}}</span>
-                  <span *ngIf="idioma === 'en'" class="mt-2 text-lg">{{itemSeleccionado?.textoi}}</span>
-                </p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>  
+  </div>
+</div>

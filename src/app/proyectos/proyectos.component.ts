@@ -57,59 +57,50 @@ export class ProyectosComponent {
   }
   items = [
     {
-      descripcion: 'El código de la página web que estás viendo, desarrollado con Angular y TailwindCSS, enfocado en un buen diseño y una buena experiencia de usuario.',
-      descripcioningles: 'The code of the website you are viewing, developed with Angular and TailwindCSS, focused on good design and a good user experience.',
+      descripcion: 'Página web personal creada para mostrar mi trayectoria profesional de forma clara y visual. El objetivo fue ofrecer una presentación moderna y fácil de navegar, mejorando la experiencia de quien consulta mi información laboral.',
+      descripcioningles: 'Personal website developed to showcase my professional career in a clear and visual way, providing a modern and easy-to-navigate presentation of my work experience.',
       titulo: 'Currículum Vitae',
       tituloingles: 'Curriculum Vitae',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012148/curri1_aauw3o.jpg',
       link: 'https://github.com/Marco23rubio/curri'
     },
     {
-      descripcion: 'Proyecto en Python para obtener el punto óptimo de los paneles solares para extraer la mayor cantidad de energía a través de cálculos matemáticos y físicos.',
-      descripcioningles: 'Python project to obtain the optimal point of solar panels to extract the most energy through mathematical and physical calculations.',
-      titulo: 'Paneles solares',
-      tituloingles: 'Solar panels',
-      md: 'col-span-2',
-      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012154/paneles4_cnzedo.jpg',
-      link: 'https://github.com/Marco23rubio/Solares'
+      descripcion: 'Proyectos donde desarrollé diferentes modelos de Inteligencia Artificial para que una computadora pudiera aprender patrones y hacer predicciones. El objetivo fue resolver problemas como clasificar información o estimar resultados a partir de datos reales.',
+      descripcioningles: 'Projects where I developed different Artificial Intelligence models so that a computer could learn patterns and make predictions, solving problems such as classifying information or estimating outcomes from real data.',
+      titulo: 'Machine Learning',
+      tituloingles: 'Machine Learning',
+      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1764831037/ia5_kclpix.jpg',
+      link: 'https://github.com/Marco23rubio/curri'
     },
     {
-      descripcion: 'Ejercicios enfocados en el análisis de datos con Python, utilizando librerías como Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, etc.',
-      descripcioningles: 'Exercises focused on data analysis with Python, using libraries such as Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, etc.',
-      titulo: 'Google Colab y Jupyter Notebooks',
-      tituloingles: 'Google Colab and Jupyter Notebooks',
-      md: 'col-span-2',
-      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012151/jupyter2_swytgs.png',
-      link: 'https://github.com/Marco23rubio/JupyterNotebooks'
+      descripcion: 'Código en Python para analizar el valor de acciones de empresas. El objetivo fue calcular si una acción estaba cara o barata usando métricas financieras y tendencias del mercado, facilitando decisiones de inversión.',
+      descripcioningles: 'Python code to analyze the value of company stocks, calculating whether a stock is overvalued or undervalued using financial metrics and market trends to aid investment decisions.',
+      titulo: 'Valoración de Stocks',
+      tituloingles: 'Stock Valuation',
+      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1764828422/stocks_aqmgkc.webp',
+      link: 'https://github.com/Marco23rubio/Stocks/blob/master/stocks.ipynb'
     },
     {
-      descripcion: 'Resolución de diferentes problemas con Python para la plataforma HackerRank, enfocados en la lógica de programación.',
+      descripcion: 'Resolución de ejercicios de programación para mejorar mi lógica y capacidad para resolver problemas. El objetivo fue fortalecer bases técnicas necesarias para el desarrollo de software y análisis de datos.',
+      descripcioningles: 'Solving programming exercises to enhance my logic and problem-solving skills, strengthening the technical foundations necessary for software development and data analysis.',
       titulo: 'HackerRank',
       tituloingles: 'HackerRank',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012150/hr4_yzudjs.png',
       link: 'https://github.com/Marco23rubio/HackerRank'
     },
-    {
-      descripcion: 'Repositorio enfocado en el transcurso de aprendizaje en Python con diferentes dificultades para mejorar el entendimiento del lenguaje.',
-      descripcioningles: 'Repository focused on the learning process in Python with different difficulties to improve understanding of the language.',
-      titulo: 'Aprendizaje de Python',
-      tituloingles: 'Python learning',
-      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012156/py_ybmsas.webp',
-      link: 'https://github.com/Marco23rubio/Python'
-    },
-    {
-      descripcion: 'Aquí se encuentran mis inicios, enfocados principalmente en la lógica basada en diagramas de flujo y principios básicos de programación.',
-      descripcioningles: 'Here are my beginnings, focused mainly on logic based on flowcharts and basic programming principles.',
-      titulo: 'Fundamentos de programación',
-      tituloingles: 'Programming fundamentals',
+        {
+      descripcion: 'Proyecto para calcular la posición ideal de paneles solares y así obtener la mayor cantidad de energía posible. El objetivo fue aplicar matemáticas y programación para mejorar el rendimiento energético de un sistema solar.',
+      descripcioningles: 'Project to calculate the optimal position of solar panels to maximize energy capture, applying mathematics and programming to enhance the energy efficiency of a solar system.',
+      titulo: 'Paneles solares',
+      tituloingles: 'Solar panels',
       md: 'col-span-2',
-      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012155/prog3_uky7qr.jpg',
-      link: 'https://github.com/Marco23rubio/fundamentos-de-programacion'
-    }
+      imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012154/paneles4_cnzedo.jpg',
+      link: 'https://github.com/Marco23rubio/SolarPanels/blob/master/solares-back'
+    },
   ];
 
   enviarAlMenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });
   }
   
 }

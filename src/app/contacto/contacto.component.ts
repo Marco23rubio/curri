@@ -139,6 +139,6 @@ export class ContactoComponent {
   }
 
   regresar(){
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });
   }
 }

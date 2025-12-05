@@ -1,52 +1,145 @@
-<div *ngIf="loading" class="fixed top-0 left-0 z-50 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50">
-    <div class="flex flex-col items-center justify-center">
-      <div class="w-32 h-32 border-t-8 border-blue-500 rounded-full animate-spin"></div>
-      <p class="mt-4 text-white text-2xl">Loading...</p>
+<div class="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-justify">
+  <div class="h-full py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div class="mb-6 sm:mb-10 md:mb-12 flex items-center justify-center">
+        <div class="flex flex-col items-center gap-3">
+          <span class="rounded-full bg-gray-700/70 px-3 py-1 text-xs font-medium uppercase tracking-wide text-gray-300">
+            Portafolio
+          </span>
+          <h2 data-i18n="tep" class="text-2xl font-bold text-gray-200 lg:text-5xl text-center">
+            <span class="text-red-400">Proyectos</span> personales
+          </h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-red-400 via-red-500 to-transparent rounded-full"></div>
+        </div>
+      </div>
+
+      <section
+        class="relative rounded-2xl border border-gray-700/80 bg-gradient-to-b from-gray-900/80 to-gray-950/90 px-4 py-6 sm:px-6 sm:py-8 shadow-2xl ring-1 ring-black/40"
+      >
+        <div class="pointer-events-none absolute inset-x-10 -top-6 h-20 rounded-full bg-red-500/10 blur-3xl"></div>
+
+        <div class="space-y-6 relative z-10">
+
+          <!-- FILA 1 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <a
+              *ngFor="let item of items | slice:0:2"
+              [href]="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex h-full flex-col overflow-hidden rounded-xl bg-gray-900 border border-gray-700 shadow-lg hover:border-red-400/70 hover:shadow-2xl transition"
+            >
+              <div class="relative h-32 md:h-40 w-full overflow-hidden">
+                <img
+                  [src]="item.imagen"
+                  loading="lazy"
+                  class="h-full w-full object-cover object-center transition duration-300 group-hover:scale-110 group-hover:opacity-90"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              </div>
+
+              <!-- contenedor de texto ocupa todo lo restante -->
+              <div class="flex-1 p-3 md:p-4 flex flex-col gap-2">
+                <span *ngIf="idioma === 'es'" class="text-white text-base md:text-lg font-semibold leading-snug">
+                  {{ item.titulo }}
+                </span>
+                <span *ngIf="idioma === 'en'" class="text-white text-base md:text-lg font-semibold leading-snug">
+                  {{ item.tituloingles }}
+                </span>
+
+                <p *ngIf="idioma === 'es'" class="text-xs md:text-sm text-gray-300">
+                  {{ item.descripcion }}
+                </p>
+                <p *ngIf="idioma === 'en'" class="text-xs md:text-sm text-gray-300">
+                  {{ item.descripcioningles }}
+                </p>
+
+                <!-- footer pegado abajo -->
+                <div class="mt-auto pt-2 flex items-center justify-between text-[11px] md:text-xs text-gray-400">
+                  <span>Ver proyecto</span>
+                  <svg
+                    class="w-4 h-4 text-red-400 group-hover:text-red-300 transition"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M7 17L17 7" />
+                    <path d="M7 7h10v10" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- FILA 2 -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+            <a
+              *ngFor="let item of items | slice:2"
+              [href]="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex h-full flex-col overflow-hidden rounded-xl bg-gray-900 border border-gray-700 shadow-lg hover:border-red-400/70 hover:shadow-2xl transition"
+            >
+              <div class="relative h-32 md:h-40 w-full overflow-hidden">
+                <img
+                  [src]="item.imagen"
+                  loading="lazy"
+                  class="h-full w-full object-cover object-center transition duration-300 group-hover:scale-110 group-hover:opacity-90"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              </div>
+
+              <!-- contenedor de texto ocupa todo lo restante -->
+              <div class="flex-1 p-3 md:p-4 flex flex-col gap-2">
+                <span *ngIf="idioma === 'es'" class="text-white text-base md:text-lg font-semibold leading-snug">
+                  {{ item.titulo }}
+                </span>
+                <span *ngIf="idioma === 'en'" class="text-white text-base md:text-lg font-semibold leading-snug">
+                  {{ item.tituloingles }}
+                </span>
+
+                <p *ngIf="idioma === 'es'" class="text-xs md:text-sm text-gray-300">
+                  {{ item.descripcion }}
+                </p>
+                <p *ngIf="idioma === 'en'" class="text-xs md:text-sm text-gray-300">
+                  {{ item.descripcioningles }}
+                </p>
+
+                <!-- footer pegado abajo -->
+                <div class="mt-auto pt-2 flex items-center justify-between text-[11px] md:text-xs text-gray-400">
+                  <span>Ver proyecto</span>
+                  <svg
+                    class="w-4 h-4 text-red-400 group-hover:text-red-300 transition"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M7 17L17 7" />
+                    <path d="M7 7h10v10" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="flex justify-center mt-8">
+        <button
+          data-i18n="regresar"
+          (click)="enviarAlMenu()"
+          class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-md font-medium text-white hover:bg-blue-800 focus:outline-none"
+        >
+          Regresar
+        </button>
+      </div>
     </div>
   </div>
-<div class="flex flex-col min-h-screen bg-gray-800 text-justify">
-    <div class="h-full py-6 sm:py-8 lg:py-12">
-        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <div class="mb-4 flex items-center justify-center gap-8 sm:mb-8 md:mb-12">
-                <div class="mb-4 flex flex-col items-start justify-center gap-4 sm:mb-4 md:mb-2">
-                    <h2 data-i18n="tep" class="text-2xl font-bold text-gray-200 lg:text-5xl"><span class="text-red-400">Proyectos</span> personales</h2>
-                    <p data-i18n="tep1" class="max-w-screen-md text-gray-200 text-md lg:text-2xl md:block">
-                        Aquí están la mayoría de trabajos <span class="text-red-400">propios</span> que he realizado. Dando <span class="text-red-400">clic</span> en la imagen, verás el repositorio donde se encuentran alojados y la <span class="text-red-400">descripción</span> de cada uno.
-                    </p>
-                </div>
-            </div>
-    
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-
-                <a *ngFor="let item of items" 
-                    href="{{item.link}}"
-                    target="_blank"
-                    class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-800 shadow-lg md:h-80 md:{{item.md}}">
-                    <img src="{{item.imagen}}" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110 group-hover:opacity-10" />
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
-                    <div class="absolute inset-0 flex items-center text-sm justify-center opacity-0 group-hover:opacity-100 transition duration-200 p-2">
-                        <span *ngIf="idioma==='es'" class="text-white text-lg">{{item.descripcion}}</span>
-                        <span *ngIf="idioma==='en'" class="text-white text-lg">{{item.descripcioningles}}</span>
-                    </div>
-    
-                    <span *ngIf="idioma==='es'" class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-3xl">{{item.titulo}}
-                    </span>
-                    <span *ngIf="idioma==='en'" class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-3xl">{{item.tituloingles}}
-                    </span>
-                </a>
-
-            </div>
-            <div class="flex justify-center mt-4">
-                <button
-                data-i18n="regresar"
-                  (click)="enviarAlMenu()"
-                  class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-md font-medium text-white hover:bg-blue-800 focus:outline-none"
-                >
-                Regresar
-                </button>
-            </div>
-        </div>
-    </div>
 </div>

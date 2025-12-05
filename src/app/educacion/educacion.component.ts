@@ -48,100 +48,120 @@ export class EducacionComponent {
 
   items = [
     {
-        'escuela': 'UVM - ',
-        'fecha': 'Septiembre 2023/Actualidad',
+        'escuela': 'Deep Learning AI',
+        'fecha': 'Octubre 2025/Actualidad',
+        'carrera': 'Redes Neuronales y Deep Learning',
         'descripcion': [
-            'Universidad del Valle de México',
-            'Actualmente cursando la maestría en Ciencia de Datos',
-            'El aprendizaje se lleva a cabo a través de la modalidad online',
-            'Aprendizaje sobre matemáticas para las ciencias de datos y los diseños de experimentos',
-            'Utilización de bibliotecas en Python para el análisis de datos',
-        ]
+            'Formación enfocada en el desarrollo de modelos de IA y redes neuronales orientados a predicción y análisis avanzado.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Deep%20Learning',
     },
     {
-        'escuela': 'Platzi - ',
-        'fecha': 'Febrero 2022/Agosto 2023',
+        'escuela': 'Universidad del Valle de México',
+        'fecha': 'Septiembre 2023/Agosto 2025',
+        'carrera': 'Maestría en Ciencia de Datos',
         'descripcion': [
-            'Escuela donde empecé con mis primeros pasos en análisis de datos',
-            'Conocimiento del lenguaje de programación Python',
-            'Cursos sobre estadística, probabilidad y matemáticas aplicadas',
+            'Enfoque en modelación estadística, machine learning y construcción de pipelines analíticos para resolver problemas complejos basados en datos.',
         ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/UVM'
+    },
+    {
+        'escuela': 'Platzi',
+        'carrera': 'Fundamentos de programación y análisis de datos',
+        'fecha': 'Julio 2020/Mayo 2022',
+        'descripcion': [
+          'Conocimientos sobre conceptos básicos de programación WEB y manejo de Bases de Datos con python',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Fundamentos%20y%20Datos'
     },
     {
         'escuela': 'Universidad Tecmilenio - ',
+        'carrera': 'Administración Financiera',
         'fecha': 'Junio 2017/Julio 2021',
         'descripcion': [
-            'Estudio Administración Financiera',
-            'Obtuve las herramientas para el análisis de empresas',
-            'Gracias a un profesor me introduje en el mundo de las inversiones bursátiles',
-            'Aproveché la facilidad de obtener prácticas para trabajar en diferentes empresas',
-            'Me gradué con un promedio de 93',
+            'Licenciatura enfocada en análisis financiero, valuación de empresas, gestión de inversiones y toma de decisiones corporativas basadas en métricas cuantitativas.',
         ],
-        'acordeon': [
-            {
-                'titulo': '¿Por qué paso 1 año entre la universidad y la preparatoria?',
-                'texto': 'Antes de entrar a estudiar finanzas, asistí a otra universidad sin tener seguridad de lo que deseaba hacer. Luego de un año en esta otra escuela, tomé la decisión de estudiar finanzas en TecMilenio.',
-            }
-        ]
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Tecmi'
     },
     {
-        'escuela': 'Colegio Sinaloa Horizontes - ',
-        'fecha': 'Junio 2013/Agosto 2016',
+        'escuela': 'AMIB',
+        'carrera': 'Análisis de mercados Bursátiles',
+        'fecha': 'Mayo 2019/Mayo 2020',
         'descripcion': [
-            'Escuela donde cursé la preparatoria',
-            'Estudié durante dos años en la especialidad de RRHH',
+            'Formación en análisis de empresas bursátiles utilizando Excel, macros y herramientas cuantitativas, así como en la comprensión y operación de instrumentos financieros.',
         ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Mercados%20Burs%C3%A1tiles'
+    },
+    {
+        'escuela': 'Canacintra/Tec de Monterrey/Platzi',
+        'carrera': 'Competencias gerenciales',
+        'fecha': 'Agosto 2018/Actualidad',
+        'descripcion': [
+            'Formación en gestión de proyectos, liderazgo y administración de personal orientada al desarrollo de equipos y ejecución efectiva.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Competencia%20Gerenciales'
     }
 ]
 
 itemsingles = [
-  {
-      'escuela': 'UVM - ',
-      'fecha': 'September 2023/Present',
-      'descripcion': [
-          'Universidad del Valle de México',
-          'Currently pursuing a Master’s degree in Data Science',
-          'Learning is conducted online',
-          'Learning about mathematics for data science and experimental design',
-          'Using Python libraries for data analysis'
-      ]
-  },
-  {
-      'escuela': 'Platzi - ',
-      'fecha': 'February 2022/August 2023',
-      'descripcion': [
-          'School where I took my first steps in data analysis',
-          'Knowledge of the Python programming language',
-          'Courses on statistics, probability, and applied mathematics'
-      ]
-  },
-  {
-      'escuela': 'Universidad Tecmilenio - ',
-      'fecha': 'June 2017/July 2021',
-      'descripcion': [
-          'Studied Financial Management',
-          'Acquired tools for company analysis',
-          'Introduced to the world of stock market investments by a professor',
-          'Took advantage of internship opportunities to work in different companies',
-          'Graduated with a GPA of 93'
-      ],
-      'acordeon': [
-          {
-              'titulo': 'Why did I take a year off between university and high school?',
-              'texto': 'Before studying finance, I attended another university without being sure of what I wanted to do. After a year at this other school, I decided to study finance at TecMilenio.'
-          }
-      ]
-  },
-  {
-      'escuela': 'Colegio Sinaloa Horizontes - ',
-      'fecha': 'June 2013/August 2016',
-      'descripcion': [
-          'School where I attended high school',
-          'Studied for two years with a specialization in HR'
-      ]
-  }
+    {
+        'escuela': 'Deep Learning AI',
+        'fecha': 'October 2025/Present',
+        'carrera': 'Neural Networks and Deep Learning',
+        'descripcion': [
+            'Training focused on developing AI models and neural networks oriented toward prediction and advanced analytics.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Deep%20Learning',
+    },
+    {
+        'escuela': 'Universidad del Valle de México',
+        'fecha': 'September 2023/August 2025',
+        'carrera': 'Master’s in Data Science',
+        'descripcion': [
+            'Specialization in statistical modeling, machine learning, and the construction of analytical pipelines to solve complex data-driven problems.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/UVM'
+    },
+    {
+        'escuela': 'Platzi',
+        'carrera': 'Foundations of Programming and Data Analysis',
+        'fecha': 'July 2020/May 2022',
+        'descripcion': [
+            'Knowledge of basic web programming concepts and database management using Python.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Fundamentos%20y%20Datos'
+    },
+    {
+        'escuela': 'Universidad Tecmilenio - ',
+        'carrera': 'Financial Administration',
+        'fecha': 'June 2017/July 2021',
+        'descripcion': [
+            'Undergraduate program focused on financial analysis, business valuation, investment management, and data-driven corporate decision-making.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Tecmi'
+    },
+    {
+        'escuela': 'AMIB',
+        'carrera': 'Stock Market Analysis',
+        'fecha': 'May 2019/May 2020',
+        'descripcion': [
+            'Training in the analysis of publicly traded companies using Excel, macros, and quantitative tools, as well as the understanding and operation of financial instruments.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Mercados%20Burs%C3%A1tiles'
+    },
+    {
+        'escuela': 'Canacintra/Tec de Monterrey/Platzi',
+        'carrera': 'Managerial Competencies',
+        'fecha': 'August 2018/Present',
+        'descripcion': [
+            'Training in project management, leadership, and personnel administration aimed at team development and efficient execution.',
+        ],
+        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Competencia%20Gerenciales'
+    }
 ]
+
+
   enviarAlMenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });
   }
 }

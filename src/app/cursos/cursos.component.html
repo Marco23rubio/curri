@@ -1,112 +1,60 @@
 <section id="testimonies" class="py-20 bg-slate-900 min-h-screen">
-    <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
+  <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
 
-
-        <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-            <div class="mb-12 space-y-5 md:mb-16 md:text-center">
-                <h1 data-i18n="cursos1" class="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-                    Cursos y <span class="text-pink-400">certificaciones</span>
-                </h1>
-                <p data-i18n="cursos2" class="text-xl text-gray-100 md:text-center md:text-2xl">
-                    En esta ruta de <span class="text-pink-400">GitHub</span> encontrarás los diplomas y certificados de los <span class="text-pink-400">cursos</span> que he realizado.
-                </p>
-                <a
-                href="https://github.com/Marco23rubio/Cursos"
-                target="_blank"
-                class="inline-block px-3 py-1 text-md font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-[#202c47] bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40 hover:text-blue-500 hover:underline">
-                https://github.com/Marco23rubio/Cursos
-            </a>
-            </div>
-        </div>
-
-
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-
-
-            <ul class="space-y-8">
-                <li *ngFor="let item of itemscol1" class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div>
-                        <a class="cursor-pointer" target="_blank" href="{{item.ruta}}">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{item.imagen}}"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
-                                    <div>
-                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
-                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
-                                    </div>
-                                </div>
-                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
-                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul class="space-y-8 sm:block">
-                <li *ngFor="let item of itemscol2" class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a class="cursor-pointer" target="_blank" href="{{item.ruta}}">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{item.imagen}}"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
-                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
-                                    </div>
-                                </div>
-                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
-                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
-            <ul class="space-y-8 lg:block">
-                <li *ngFor="let item of itemscol3" class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a class="cursor-pointer" target="_blank" href="{{item.ruta}}">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{item.imagen}}"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                                    <div>
-                                        <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{item.titulo}}</h3>
-                                        <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{item.tituloingles}}</h3>
-                                    </div>
-                                </div>
-                                <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg" >{{item.descripcion}}</p>
-                                <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg" >{{item.descripcioningles}}</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="flex justify-center mt-4">
-            <button
-            data-i18n="regresar"
-              (click)="enviarAlMenu()"
-              class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-md font-medium text-white hover:bg-blue-800 focus:outline-none"
-            >
-              Regresar
-            </button>
-        </div>
+    <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
+      <div class="mb-12 space-y-5 md:mb-16 md:text-center">
+        <h1 data-i18n="cursos1" class="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
+          <span class="text-pink-400"></span>
+        </h1>
+        <p data-i18n="cursos2" class="text-xl text-gray-100 md:text-center md:text-2xl">
+          <span class="text-pink-400"></span> <span class="text-pink-400"></span>
+        </p>
+        <a
+          href="https://github.com/Marco23rubio/Cursos"
+          target="_blank"
+          class="inline-block px-3 py-1 text-md font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-[#202c47] bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40 hover:text-blue-500 hover:underline">
+          https://github.com/Marco23rubio/Cursos
+        </a>
+      </div>
     </div>
 
+   
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <div *ngFor="let item of items" class="text-sm leading-6">
+        <div class="relative group">
+          <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
+
+          <a class="cursor-pointer" target="_blank" [href]="item.ruta">
+            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+              <div class="flex items-center space-x-4">
+                <img
+                  [src]="item.imagen"
+                  class="w-12 h-12 bg-center bg-cover border rounded-full"
+                  [attr.alt]="idioma==='es' ? item.titulo : item.tituloingles" />
+                <div>
+                  <h3 *ngIf="idioma==='es'" class="text-lg font-semibold text-white">{{ item.titulo }}</h3>
+                  <h3 *ngIf="idioma==='en'" class="text-lg font-semibold text-white">{{ item.tituloingles }}</h3>
+                </div>
+              </div>
+
+              <p *ngIf="idioma==='es'" class="leading-normal text-gray-300 text-lg">
+                {{ item.descripcion }}
+              </p>
+              <p *ngIf="idioma==='en'" class="leading-normal text-gray-300 text-lg">
+                {{ item.descripcioningles }}
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        data-i18n="regresar"
+        (click)="enviarAlMenu()"
+        class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-md font-medium text-white hover:bg-blue-800 focus:outline-none">
+      </button>
+    </div>
+  </div>
 </section>

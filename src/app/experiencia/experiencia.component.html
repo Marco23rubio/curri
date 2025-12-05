@@ -1,50 +1,238 @@
-<div class="flex-col min-h-screen bg-gray-900 dark:bg-gray-900 text-justify">
+<div class="min-h-screen bg-gray-900 text-gray-100">
+  <article class="mx-auto flex-1 max-w-5xl px-4 py-10 sm:px-6 lg:px-8 selection:bg-black selection:text-white">
 
-  <article class="font-fira mx-auto max-w-5xl p-4 selection:bg-black text-gray-200 selection:text-white flex-grow">
-    <h1 data-i18n="tit_exp" class="font-fira mb-8 text-4xl font-bold sm:mt-12">Experiencia <span class="text-green-500">Laboral</span></h1>
+    
+    <header class="mb-4 flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1 text-xs font-medium text-emerald-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Empleos</span>
+        </div>
 
-    <img class="float-right w-32 md:w-60 rounded-lg -mt-8 ml-12" src="https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012159/training_sa4c51.png" alt="Chamba" />
+        <h1
+          data-i18n="tit_exp"
+          class="text-3xl sm:text-4xl md:text-6xl font-extrabold 
+         bg-gradient-to-r from-green-300 via-blue-500 to-purple-300 
+         bg-clip-text text-transparent 
+         leading-[1.15] md:leading-[1.1] pb-1"
+        >
+        </h1>
+      </div>
 
-    <p data-i18n="empleos" class="mt-10 text-xl">Aquí encontrarás los diferentes <span class="text-green-400">empleos</span>, que he tenido a lo largo del tiempo, además de explicar las <span class="text-green-400">actividades</span>, que desarrollé, las <span class="text-green-400">fortalezas</span> que obtuve gracias a ellos y, por último, las circunstancias que llevaron a la finalización de cada relación laboral.</p>
-    <br>
+      <div class="flex justify-center sm:justify-end">
+        <div class="relative">
+          <div class="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-green-500/40 via-blue-500/30 to-purple-500/40 blur-xl opacity-60"></div>
+          <img
+            class="relative w-32 sm:w-40 md:w-56 rounded-2xl border border-white/10 shadow-xl shadow-black/60 object-cover"
+            src="https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012159/training_sa4c51.png"
+            alt="Experiencia laboral"
+          />
+        </div>
+      </div>
+    </header>
 
-    <section *ngFor="let item of itemsActuales; let i = index" class="mt-4 mr-30 bg-gray-800 dark:bg-gray-800 shadow-lg p-6 rounded-lg">
-      <details class="group">
-        <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeon(i)">
-          <span class="text-lg font-bold md:text-3xl md:text-current">{{item.empresa}} <span class="md:text-2xl md:text-current font-bold text-base">{{item.fecha}}</span></span>
-          <span [class.rotate-180]="acordeonAbierto[i]" class="transition">
-            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+    <!-- Cards de experiencia -->
+    <section
+      *ngFor="let item of itemsActuales; let i = index"
+      class="mt-5 rounded-2xl border border-slate-700/70 bg-slate-900/70 shadow-lg shadow-black/40 p-5 sm:p-6"
+    >
+      <details class="group" [open]="acordeonAbierto[i]">
+        <summary
+          class="flex cursor-pointer list-none items-start justify-between gap-4"
+        >
+          <div class="w-full space-y-2">
+            <div class="flex flex-wrap items-baseline gap-3">
+              <h3 class="text-lg md:text-2xl font-bold text-white">
+                {{ item.empresa }}
+              </h3>
+              <span class="text-sm md:text-base font-semibold text-slate-300">
+                {{ item.fecha }}
+              </span>
+            </div>
+
+            <div>
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-3 py-1 text-xs md:text-sm font-medium text-indigo-200 ring-1 ring-indigo-500/30"
+              >
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 7h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                  <path d="M3 11h18"/>
+                </svg>
+                {{ item.puesto }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Flecha con animación usando group-open -->
+          <span
+            class="mt-1 shrink-0 rounded-full border border-slate-700/70 bg-slate-800/80 p-1.5
+                   transition-transform duration-200 group-open:rotate-180"
+          >
+            <svg
+              fill="none"
+              height="20"
+              width="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </span>
         </summary>
-        <div class="mt-2" [class.animate-fadeIn]="acordeonAbierto[i]">
-          <ul class="mt-6 md:text-lg text-sm list-disc list-outside ml-6">
-            <li *ngFor="let punto of item.descripcion">{{punto}}</li>
-            <li *ngFor="let acordeonItem of item.acordeon; let j = index"> 
-              <details class="group mt-1">
-                <summary class="flex justify-between items-center cursor-pointer list-none" (click)="toggleAcordeonInterno(i, j)">
-                  <span>{{acordeonItem.titulo}}</span>
-                  <span [class.rotate-180]="acordeonInternoAbierto[i][j]" class="transition">
-                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                  </span>
-                </summary>
-                <p class="mt-2 text-sm md:text-lg" [class.animate-fadeIn]="acordeonInternoAbierto[i][j]">
-                  {{acordeonItem.texto}}
-                </p>
-              </details>
-            </li>
-          </ul>
+
+        <div class="mt-4 border-t border-slate-700/60 pt-4" [class.animate-fadeIn]="acordeonAbierto[i]">
+
+          
+          <ng-container *ngIf="item.puesto !== 'Practicante'; else practicanteBody">
+
+            
+            <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-200">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              <span *ngIf="idioma === 'es'">Responsabilidades principales</span>
+              <span *ngIf="idioma === 'en'">Main responsibilities</span>
+            </div>
+
+            
+            <ul class="space-y-3 text-md md:text-base">
+              <li
+                *ngFor="let punto of item.descripcion; let j = index"
+                class="flex gap-3 rounded-xl bg-slate-800/70 px-4 py-3 ring-1 ring-slate-700/60"
+              >
+               
+                <span
+                  class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300"
+                >
+                  <svg
+                    class="h-3.5 w-3.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+
+               
+                <div class="space-y-1">
+                 
+                  <p class="text-slate-100 leading-relaxed">
+                    {{ punto }}
+                  </p>
+
+                  
+                  <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2">
+                    <span
+                      class="inline-flex h-5 items-center rounded-full bg-emerald-500/10 px-2 text-[10px] font-semibold uppercase tracking-wider text-emerald-200"
+                    >
+                      <ng-container *ngIf="idioma === 'es'; else objectiveLabelEn">Objetivo</ng-container>
+                      <ng-template #objectiveLabelEn>Objective</ng-template>
+                    </span>
+                    <p class="text-xs sm:text-[15px] text-slate-200/90 leading-relaxed">
+                      {{ item.objetivo?.[j] }}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </ng-container>
+
+          
+          <ng-template #practicanteBody>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div
+                *ngFor="let p of item.descripcion"
+                class="rounded-xl bg-slate-800/70 p-4 ring-1 ring-slate-700/50"
+              >
+                <ng-container *ngIf="splitInternLine(p) as exp">
+                  <div class="mb-2 flex flex-wrap items-baseline gap-2">
+                    <span class="text-base md:text-lg font-bold text-slate-100">
+                      {{ exp.empresa }}
+                    </span>
+                    <span class="text-slate-500">·</span>
+                    <span class="text-sm md:text-base text-slate-300">
+                      {{ exp.periodo }}
+                    </span>
+                  </div>
+                  <p class="text-sm md:text-base leading-relaxed text-slate-200">
+                    {{ exp.detalle }}
+                  </p>
+                </ng-container>
+              </div>
+            </div>
+
+            <ul class="mt-5 ml-4 list-disc space-y-2 text-sm md:text-base text-slate-200">
+              <li *ngFor="let acordeonItem of item.acordeon; let j = index">
+                <details class="group mt-1">
+                  <summary
+                    class="flex cursor-pointer list-none items-center justify-between"
+                    (click)="toggleAcordeonInterno(i, j)"
+                  >
+                    <span>{{ acordeonItem.titulo }}</span>
+                    <span class="transition-transform group-open:rotate-180">
+                      <svg
+                        fill="none"
+                        height="20"
+                        width="20"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </span>
+                  </summary>
+                  <p class="mt-2 text-sm md:text-base text-slate-300 group-open:animate-fadeIn">
+                    {{ acordeonItem.texto }}
+                  </p>
+                </details>
+              </li>
+            </ul>
+          </ng-template>
+
         </div>
       </details>
     </section>
 
-    <div class="mt-12 text-center">
+   
+    <div class="mt-10 border-t border-slate-800 pt-6 text-center">
       <button
         data-i18n="regresar"
         (click)="enviarAlMenu()"
-        class="transform hover:scale-105 hover:brightness-125 transition-all duration-200 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none"
+        class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3 text-sm sm:text-base font-semibold text-white
+               border border-blue-500 shadow-md transition-all duration-200
+               hover:bg-blue-700 hover:border-blue-600 hover:shadow-blue-500/30 hover:scale-[1.02] focus:outline-none"
       >
-      Regresar
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 19l-7-7 7-7" />
+        </svg>
+        Regresar
       </button>
     </div>
+
   </article>
 </div>

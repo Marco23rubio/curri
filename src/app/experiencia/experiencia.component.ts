@@ -5,303 +5,170 @@ import { TranslationService } from '../services/translation.service';
 import { LenguajeService } from '../services/lenguaje.service';
 
 @Component({
-  selector: 'app-experiencia',
-  standalone: true,
-  imports: [
-      CommonModule,
-  ],
-  templateUrl: './experiencia.component.html',
-  styleUrl: './experiencia.component.css'
+    selector: 'app-experiencia',
+    standalone: true,
+    imports: [
+        CommonModule,
+    ],
+    templateUrl: './experiencia.component.html',
+    styleUrl: './experiencia.component.css'
 })
 export class ExperienciaComponent {
 
-  constructor(
-    private router: Router,
-    private translationService: TranslationService,
-    private lenguajeService: LenguajeService,
-  ) {}
+    constructor(
+        private router: Router,
+        private translationService: TranslationService,
+        private lenguajeService: LenguajeService,
+    ) { }
 
-  idioma:string;
-  acordeonAbierto: boolean[] = [];
-  acordeonInternoAbierto: boolean[][] = [];
-  loading = true;
-  itemsActuales = [];
-  
-  ngOnInit() {
-    const savedLanguage = localStorage.getItem('language');
+    idioma: string;
+    acordeonAbierto: boolean[] = [];
+    acordeonInternoAbierto: boolean[][] = [];
+    loading = true;
+    itemsActuales = [];
 
-    if (savedLanguage) {
-      this.idioma = savedLanguage;
-    } else {
-      this.idioma = this.lenguajeService.getLanguage();
+
+    ngOnInit() {
+        const savedLanguage = localStorage.getItem('language');
+
+        if (savedLanguage) {
+            this.idioma = savedLanguage;
+        } else {
+            this.idioma = this.lenguajeService.getLanguage();
+        }
+        this.changeLanguage(this.idioma);
+        this.actualizarItems();
+
+        this.items.forEach((item, i) => {
+            this.acordeonAbierto[i] = false;
+            this.acordeonInternoAbierto[i] = [];
+
+        });
     }
-    this.changeLanguage(this.idioma);
-    this.actualizarItems();
 
-    this.items.forEach((item, i) => {
-      this.acordeonAbierto[i] = false;
-      this.acordeonInternoAbierto[i] = [];
-      item.acordeon.forEach((_, j) => {
-        this.acordeonInternoAbierto[i][j] = false;
-      });
-    });    
-  }
-
-  actualizarItems() {
-    this.itemsActuales = this.idioma === 'es' ? this.items : this.itemsingles;
-  }
-
-  toggleAcordeon(i: number) {
-    this.acordeonAbierto[i] = !this.acordeonAbierto[i];
-  }
-
-  toggleAcordeonInterno(i: number, j: number) {
-    this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
-  }
-
-  changeLanguage(language) {
-    this.translationService.changeLanguage(language);
-    localStorage.setItem('language', language);
-  }
-
-  items = [
-    {
-        'empresa': 'Coppel - ',
-        'fecha': 'Junio 2022/Mayo 2024',
-        'descripcion': [
-            'Desarrollo de Frontend web con Angular y TailwindCSS',
-            'Desarrollo de Backend con PHP, Spring Boot',
-            'Desarrollo de aplicaciones de escritorio con C++',
-            'Manipulación de datos con PostgreSQL y MySQL',
-            'Uso de metodologías ágiles como Scrum'
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'Entre las fortalezas que obtuve en este puesto se encuentra la capacidad de encontrar diferentes maneras de resolver un problema, desde el uso de la lógica hasta la investigación de documentación. De igual manera, mi capacidad de adaptación se vio aumentada, ya que no solo era el habituarse a diferentes tecnologías, sino que al llegar con casi nulo conocimiento en programación, me vi en la necesidad de aprender de forma acelerada para el cumplimiento de las tareas.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'Los motivos por los que decidí finalizar con mis labores aquí fueron que, en mi búsqueda de empezar a desarrollarme como científico de datos, pese a haber obtenido una posición en la empresa, el cambio de área se vio finalizado debido a situaciones internas que afectaron de manera grave a la compañía por lo que se vio suspendido mi cambio de área. Por lo tanto, decidí buscar nuevas oportunidades en el area de analítica de datos en una ciudad más grande',
-            },
-        ]
-    },
-    {
-        'empresa': 'Inversionista freelance - ',
-        'fecha': 'Diciembre 2020/Junio 2022',
-        'descripcion': [
-            'Análisis de estados financieros',
-            'Compra/venta de acciones en la bolsa de valores',
-            'Manejo de fondos para terceros'
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'Durante mi aventura como emprendedor en el área de inversiones, además de tener la oportunidad de aplicar la mayoría de conceptos aprendidos en la carrera sobre el análisis de empresas, también pude desarrollar una habilidad para las ventas al contar con una propia cartera de clientes. De igual manera, mi capacidad de negociación se vio incrementada al tener que tratar con diferentes tipos de personas y sus necesidades de manera diaria, pero lo más primordial fue el manejo de las emociones, sobre todo bajo presión, a la hora de realizar compras o ventas de acciones.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'El motivo por el que decidí pausar esta actividad, al menos por la parte del manejo de fondos a terceros, fue que encontré el área de ciencia de datos, en la cual, si lograba desarrollarme, podría en un futuro combinar las finanzas con la tecnología. Por lo tanto, decidí enfocarme en esta nueva área de oportunidad, pero de igual manera sigo invirtiendo de manera personal en la bolsa de valores.',
-            },
-        ]
-    },
-    {
-        'empresa': 'Universidad del Bajío - ',
-        'fecha': 'Diciembre 2020/Junio 2021 (prácticas)',
-        'descripcion': [
-            'Lectura de libros de finanzas y economía',
-            'Desarrollo del material didáctico para la carrera de finanzas',
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'La mayor fortaleza que logré aquí fue obtener el hábito de la lectura, el cual tuve la suerte de desarrollar gracias a la cantidad de libros que tuve que leer para el desarrollo del material didáctico. De igual manera, mi capacidad de organización se vio incrementada al tener que cumplir con los tiempos de entrega de los materiales al ser un trabajo home office.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'La razón por la que finalicé con mis labores fue que me encontraba bajo contrato temporal. Al finalizar el periodo, la universidad aún se encontraba en desarrollo, por lo que no se me pudo ofrecer un puesto fijo, así que decidí buscar nuevas oportunidades.',
-            },
-        ]
-    },
-    {
-        'empresa': 'NexGlobal - ',
-        'fecha': 'Junio 2019/Junio 2020 (prácticas)',
-        'descripcion': [
-            'Venta de productos financieros enfocados a préstamos a pymes',
-            'Análisis contable de pymes para obtención del mejor crédito posible',
-            'Manejo de cartera de clientes',
-            'Desarrollo de página web para automatización del proceso de solicitud de créditos',
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'Las dos mayores fortalezas que obtuve aquí fueron, en primer lugar, experimentar el manejo de una cartera de clientes, creando estrategias de venta para lograr que se pudieran ofrecer los créditos a las pymes. En segundo lugar, el desarrollo de la página web, ya que fue mi primer acercamiento al desarrollo web, lo cual me abrió las puertas a la programación.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'El motivo por el que finalicé las labores fue que, debido a la pandemia, la empresa se vio en la necesidad de cesar operaciones debido a una fuerte inversión que se hizo antes de la cuarentena.',
-            },
-        ]
-    },
-    {
-        'empresa': 'Grupo Vama - ',
-        'fecha': 'Enero 2019/Junio 2019 (prácticas)',
-        'descripcion': [
-            'Control de nómina y quejas de colaboradores',
-            'Manejo de las necesidades de equipo de los colaboradores',
-            'Contratación de personal para CEDIS'
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'La mayor fortaleza que obtuve de trabajar en el área de RRHH fue desarrollar la empatía, ya que al tener que tratar con las necesidades de los colaboradores, me vi en la necesidad de ponerme en su lugar para poder ofrecerles la mejor solución a sus problemas.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'El motivo por el que finalicé mis prácticas aquí fue que durante esa temporada de la carrera, me encontraba en la búsqueda de una empresa en la cual pudiera desarrollar mis habilidades en el área de finanzas, por lo que decidí buscar nuevas oportunidades en otras empresas.',
-            },
-        ]
-    },
-    {
-        'empresa': 'Camiones Laija - ',
-        'fecha': 'Febrero 2017/Diciembre 2018 (prácticas)',
-        'descripcion': [
-            'Control de contabilidad y nómina de la empresa',
-            'Manejo del personal',
-        ],
-        'acordeon': [
-            {
-                'titulo': 'Fortalezas que obtuve de esta experiencia',
-                'texto': 'Durante mi primera experiencia laboral, la mayor fortaleza que obtuve fue la de la responsabilidad, ya que al ser mi primer trabajo formal, me vi en la necesidad de cumplir con los horarios y las tareas asignadas. De igual manera, el manejo del personal me ayudó a desarrollar mis habilidades de comunicación, eliminando la timidez que tenía al hablar con personas desconocidas. Asimismo, el manejo de la contabilidad me ayudó a desarrollar habilidades de organización y manejo de números.',
-            },
-            {
-                'titulo': 'Causa de desvinculación',
-                'texto': 'La causa por la que terminé con mi primera experiencia laboral se debió a un tema estudiantil, esto debido a que en mi carrera empecé con las clases en la tarde, chocando con el horario de trabajo.',
-            },
-        ]
+    actualizarItems() {
+        this.itemsActuales = this.idioma === 'es' ? this.items : this.itemsingles;
     }
-]
 
-    itemsingles = [
+    toggleAcordeon(i: number) {
+        this.acordeonAbierto[i] = !this.acordeonAbierto[i];
+    }
+
+    toggleAcordeonInterno(i: number, j: number) {
+        this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
+    }
+
+    changeLanguage(language) {
+        this.translationService.changeLanguage(language);
+        localStorage.setItem('language', language);
+    }
+
+    splitInternLine(p: string) {
+  const parts = p.split(/\s*[-–—]\s*/); // tolera sin/ con espacios y en/em dash
+  return {
+    empresa: (parts[0] ?? '').trim(),
+    periodo: (parts[1] ?? '').trim(),
+    detalle: (parts.slice(2).join(' - ') ?? '').trim(),
+  };
+}
+
+    items = [
+                {
+            'empresa': 'Liverpool - ',
+            'fecha': 'Septiembre 2024/Noviembre 2025',
+            'puesto': 'Consultor Sr.',
+            'descripcion': [
+                'Automatización de la obtención de datos de SAP y Páginas web además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos',
+                'Desarrollo de una Intranet con Angular y FastAPI para la automatización de procesos financieros y de reporting, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
+                'Desarrollo de presupuestos enfocado en asegurar una asignación óptima de recursos entre áreas y mejorar la efectividad del gasto anual para una mejor planeación con los inversionistas',
+                'Incremento de la retención y satisfacción del equipo mediante acciones de mejora del ambiente laboral',
+            ],
+            'objetivo' : ['Al obtener ahora de manera automática los datos de forma diaria, se ahorraba hasta 2 horas diarias en la obtención y limpieza de datos',
+                'Al atender tantas areas diferentes, con necesidades parecidas entre ellas, el desarrollo de la intranet permitió reducir los tiempos de análisis de datos y creación de dashboards en un 50%',
+                'El mejorar el proceso de presupuestación permitió tener un mayor horizonte de tiempo para los cambios y ajustes necesarios en fechas criticas del año fiscal',
+                'Elimiar la alta rotación del equipo de trabajo, el cual era un problema constante en el área, mejorando la comunicación y el ambiente laboral'
+            ]
+        },
         {
             'empresa': 'Coppel - ',
-            'fecha': 'June 2022/May 2024',
+            'fecha': 'Junio 2022/Junio 2024',
+            'puesto': 'Desarrollador Jr',
             'descripcion': [
-                'Frontend web development with Angular and TailwindCSS',
-                'Backend development with PHP, Spring Boot',
-                'Desktop application development with C++',
-                'Data manipulation with PostgreSQL and MySQL',
-                'Use of agile methodologies like Scrum'
+                'Desarrollo de Frontend con Angular y TailwindCSS, para una mejor experiencia de usuario y el uso de PHP Y Spring Boot en el Backend para una mayor eficiencia en el manejo de datos',
+                'Desarrollo y mantenimiento de aplicaciones de escritorio con C++',
+                'Manipulación de datos con PostgreSQL y MySQL para asegurar la integridad y disponibilidad de la información',
+                'Uso de metodologías ágiles como Scrum, asegurando entregas continuas y adaptabilidad a cambios en los requisitos del cliente',
             ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'Among the strengths I gained in this position is the ability to find different ways to solve a problem, from using logic to researching documentation. Similarly, my adaptability increased, as I had to get used to different technologies and learn programming skills rapidly to fulfill tasks, starting with almost no prior knowledge.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'The reasons I decided to end my work here were due to my goal of starting a career as a data scientist. Despite obtaining a position in the company, internal issues significantly affected the company, suspending my department change. Therefore, I decided to seek new opportunities in the field of data analytics in a larger city.'
-                }
+            'objetivo' : ['Migrar programas legados a aplicaciones web modernas para mejorar la accesibilidad y experiencia del usuario,como cuando realice la migración del sistema del pago de nómina a una aplicación para una conectividad más rapidad y sencilla al banco encargado de los pagos con la API proporcionada por ellos',
+                'Mantener procesos financieros críticos funcionando sin interrupciones mediante aplicaciones de escritorio robustas que no necesitaban una opción web,esto involucro el mantenimiento de la opción de consulta de créditos para los empleados de Coppel',
+                'Una desarrollo eficiente de las funciones de la base de datos , además de la indexación adecuada de las tablas, permitió mejorar los tiempos de respuesta de las consultas en un 20%',
+                'El uso de Scrum permitió una mejor comunicación entre los miembros del equipo y una mayor adaptabilidad a los cambios en los requisitos del proyecto, resultando en una mayor satisfacción del cliente, medible en encuestas posteriores al proyecto'
             ]
         },
         {
-            'empresa': 'Freelance Investor - ',
-            'fecha': 'December 2020/June 2022',
+            'empresa': 'Prácticas/Trabajos Medio Tiempo',
+            'fecha': 'Febrero 2017 / Junio 2021',
+            'puesto': 'Practicante',
             'descripcion': [
-                'Financial statement analysis',
-                'Buying/selling stocks on the stock market',
-                'Managing funds for third parties'
-            ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'During my journey as an entrepreneur in the investment field, I applied most of the concepts learned during my studies on company analysis. I also developed sales skills by managing my own client portfolio and improved my negotiation skills by dealing with different types of people and their needs daily. The most crucial skill I developed was emotional management, especially under pressure when buying or selling stocks.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'I decided to pause this activity, at least regarding managing third-party funds, because I found the field of data science. If I could develop my skills in this field, I could combine finance and technology in the future. Therefore, I decided to focus on this new opportunity while still investing personally in the stock market.'
-                }
-            ]
-        },
-        {
-            'empresa': 'Universidad del Bajío - ',
-            'fecha': 'December 2020/June 2021 (internship)',
-            'descripcion': [
-                'Reading finance and economics books',
-                'Developing teaching materials for the finance program'
-            ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'The greatest strength I gained here was developing the habit of reading, thanks to the many books I had to read for developing teaching materials. My organizational skills also improved by meeting deadlines for delivering materials while working from home.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'I ended my work here because it was a temporary contract. When the period ended, the university was still developing, and they couldn’t offer me a permanent position, so I decided to seek new opportunities.'
-                }
-            ]
-        },
-        {
-            'empresa': 'NexGlobal - ',
-            'fecha': 'June 2019/June 2020 (internship)',
-            'descripcion': [
-                'Selling financial products focused on loans to SMEs',
-                'Accounting analysis of SMEs to obtain the best possible credit',
-                'Managing client portfolios',
-                'Developing a website to automate the loan application process'
-            ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'The two greatest strengths I gained here were, first, managing a client portfolio and creating sales strategies to offer loans to SMEs. Second, developing the website, which was my first experience in web development and opened the doors to programming.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'I ended my work here because, due to the pandemic, the company had to cease operations after a significant investment made before the quarantine.'
-                }
-            ]
-        },
-        {
-            'empresa': 'Grupo Vama - ',
-            'fecha': 'January 2019/June 2019 (internship)',
-            'descripcion': [
-                'Payroll and employee complaint management',
-                'Managing the equipment needs of employees',
-                'Hiring personnel for CEDIS'
-            ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'The greatest strength I gained from working in HR was developing empathy. By addressing employees’ needs, I had to put myself in their shoes to offer the best solutions to their problems.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'I ended my internship here because I was looking for a company where I could develop my skills in finance, so I decided to seek new opportunities in other companies.'
-                }
-            ]
-        },
-        {
-            'empresa': 'Camiones Laija - ',
-            'fecha': 'February 2017/December 2018 (internship)',
-            'descripcion': [
-                'Managing the company’s accounting and payroll',
-                'Managing personnel'
-            ],
-            'acordeon': [
-                {
-                    'titulo': 'Strengths I gained from this experience',
-                    'texto': 'During my first work experience, the greatest strength I gained was responsibility. Being my first formal job, I had to adhere to schedules and assigned tasks. Managing personnel helped me develop communication skills, overcoming shyness when speaking with strangers. Also, handling accounting helped me develop organizational and numerical skills.'
-                },
-                {
-                    'titulo': 'Reason for leaving',
-                    'texto': 'I ended my first work experience due to a study-related issue. My classes started in the afternoon, conflicting with my work schedule.'
-                }
+                'Universidad del Bajío- Diciembre 2020/Junio 2021 - Desarrollo de material didáctico para la carrera de finanzas donde desarrolle aun más la teoría en temas contables y financieras ',
+                'NexGlobal- Junio 2019/Junio 2020 - Realizaba el análisis contable de PYMES, además de investigar sobre el giro de la empresa para sugerir la mejor opción de un crédito bancario o gubernamental',
+                'Grupo Vama- Enero 2019/Junio 2019 - Control de nómina y manejo de RH con empleados de la empresa',
+                'Camiones Laija- Febrero 2017/Diciembre 2018 - Control de contabilidad y nómina de la empresa con el uso de EXCEL y el software BEA para el manejo de los camiones',
             ]
         }
-]
+    ]
 
-  enviarAlMenu() {
-    this.router.navigate(['/menu']);
+ itemsingles = [
+  {
+    'empresa': 'Liverpool - ',
+    'fecha': 'September 2024 / November 2025',
+    'puesto': 'Senior Consultant',
+    'descripcion': [
+      'Automation of data extraction from SAP and web sources, including data cleaning and transformation for use in predictive modeling projects',
+      'Development of an Intranet using Angular and FastAPI for the automation of financial and reporting processes, integrating multiple data sources and improving data traceability',
+      'Budget development focused on ensuring optimal resource allocation across departments and improving annual spending efficiency for better planning with stakeholders',
+      'Increase in team retention and satisfaction through workplace environment improvement initiatives'
+    ],
+    'objetivo': [
+      'By automating daily data extraction, up to 2 hours per day previously spent on data gathering and cleaning were saved',
+      'Serving multiple departments with similar needs, the intranet reduced data analysis and dashboard creation time by 50%',
+      'Improving the budgeting process provided a longer horizon to make adjustments during critical fiscal dates',
+      'Reducing the high turnover rate in the team by improving communication and workplace environment'
+    ]
+  },
+  {
+    'empresa': 'Coppel - ',
+    'fecha': 'June 2022 / June 2024',
+    'puesto': 'Junior Developer',
+    'descripcion': [
+      'Frontend development with Angular and TailwindCSS for improved user experience, and PHP and Spring Boot on the backend for better data processing efficiency',
+      'Development and maintenance of desktop applications using C++',
+      'Data manipulation with PostgreSQL and MySQL to ensure data integrity and availability',
+      'Use of agile methodologies such as Scrum, ensuring continuous delivery and adaptability to changing client requirements'
+    ],
+    'objetivo': [
+      'Migrate legacy systems to modern web applications to improve accessibility and user experience, such as migrating the payroll payment system to a web application for faster and simpler connectivity to the bank API handling disbursements',
+      'Maintain critical financial processes running without interruption through robust desktop applications where a web version was not required, including the employee credit consultation system',
+      'Efficient development of database functions and proper table indexing improved query response times by 20%',
+      'Using Scrum improved team communication and adaptability to changing requirements, resulting in higher client satisfaction measured through post-project surveys'
+    ]
+  },
+  {
+    'empresa': 'Internships / Part-Time Jobs',
+    'fecha': 'February 2017 / June 2021',
+    'puesto': 'Intern',
+    'descripcion': [
+      'Universidad del Bajío - December 2020 / June 2021 - Development of educational material for the finance program, deepening accounting and financial theory',
+      'NexGlobal - June 2019 / June 2020 - Conducted accounting analysis for small businesses and researched their industry to recommend the best financial option through bank or government programs',
+      'Grupo Vama - January 2019 / June 2019 - Payroll management and HR operations for company employees',
+      'Camiones Laija - February 2017 / December 2018 - Accounting and payroll control using Excel and BEA software for fleet management'
+    ]
   }
+];
+
+
+    enviarAlMenu() {
+        this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });
+    }
 
 }
