@@ -72,7 +72,7 @@ export class EducacionComponent {
         'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Fundamentos%20y%20Datos'
     },
     {
-        'escuela': 'Universidad Tecmilenio - ',
+        'escuela': 'Universidad Tecmilenio',
         'carrera': 'Administración Financiera',
         'fecha': 'Junio 2017/Julio 2021',
         'descripcion': [
@@ -129,7 +129,7 @@ itemsingles = [
         'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Fundamentos%20y%20Datos'
     },
     {
-        'escuela': 'Universidad Tecmilenio - ',
+        'escuela': 'Universidad Tecmilenio',
         'carrera': 'Financial Administration',
         'fecha': 'June 2017/July 2021',
         'descripcion': [
@@ -161,4 +161,11 @@ itemsingles = [
   enviarAlMenu() {
     this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });
   }
+
+  abrirCertificado(url: string) {
+  if (!url) {
+    return;
+  }
+  window.open(url, '_blank', 'noopener');
+}
 }
