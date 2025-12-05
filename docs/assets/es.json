@@ -5,7 +5,8 @@
     "empezemos": "Empecemos",
     "saludo":"Hola , mi nombre es Marco Rubio",
     "presentacion": "He elaborado este currículum con el propósito de asegurar una oportunidad para desarrollarme como analista de datos. Estoy emocionado por la posibilidad de ser considerado para este puesto.",
-    "descarga": "Descargar CV",
+    "descarga": "Descargar",
+    "aboutMeTitle": "Sobre mí",
     "Exp": "Experiencia Laboral",
     "Edu": "Educación",
     "Cur": "Cursos",
@@ -41,5 +42,14 @@
     "Apellido":"Apellido",
     "mensaje":"Mensaje",
     "enviar":"Enviar mensaje",
-    "error":"Por favor, introduce un correo electrónico válido."
+    "error":"Por favor, introduce un correo electrónico válido.",
+    "descarga_titulo": "¿Quieres una copia completa?",
+    "descarga_texto": "Descarga mi CV actualizado en formato PDF para revisarlo con calma o compartirlo.",
+    "menu_subtitulo": "Selecciona una sección para conocer más sobre mi experiencia, habilidades, proyectos y formación.",
+    "sm_tit" : "Sobre mí · Perfil profesional",
+    "quien_soy": "¿Quién soy?",
+    "text_quien": "Soy un científico de datos y financiero, enfocado en utilizar la inteligencia artificial para resolver problemas complejos y aportar valor a las organizaciones. Me apasiona el análisis de datos, la estadística y la programación. Cuento con experiencia en proyectos de análisis de datos, visualización y modelado predictivo, utilizando herramientas como Python, R y SQL y trabajando en incluir nuevas herramientas de IA para optimizar procesos como TensorFlow y PyTorch.",
+    "text_obj": "Usar la IA y el análisis de datos para resolver problemas enfocados al área financiera, optimizando procesos que permitan una mejor toma de decisiones, con un enfoque en el control de riesgos y la maximización de beneficios.",
+    "text_logros": "Desarrollo de intranet para automatizar procesos financieros y de reporting, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos."
+    
   }

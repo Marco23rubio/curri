@@ -5,7 +5,7 @@
     "empezemos" : "Let's start",
     "saludo":"Hello, I'm Marco Rubio",
     "presentacion" : "I have crafted this resume with the aim of securing an opportunity to grow and develop as a data analyst. I am thrilled about the prospect of being considered for this position.",
-    "descarga": "Download CV",
+    "descarga": "Download",
     "aboutMeTitle": "About me",
     "contactTitle": "Contact",
     "Exp": "Work Experience",
@@ -42,5 +42,13 @@
     "nombre": "First Name",
     "Apellido": "Last Name",
     "mensaje": "Message",
-    "enviar": "Send Message"
+    "enviar": "Send Message",
+    "descarga_titulo": "Want a full copy?",
+    "descarga_texto": "Download my updated CV in PDF format to review it at your convenience or share it with others.",
+    "menu_subtitulo": "Select a section to learn more about my experience, skills, projects, and education.",
+    "sm_tit" : "About Me · Professional Profile",
+    "quien_soy": "Who am I?",
+    "text_quien": "I am a data scientist and financier, focused on using artificial intelligence to solve complex problems and add value to organizations. I am passionate about data analysis, statistics, and programming. I have experience in data analysis projects, visualization, and predictive modeling, using tools such as Python, R, and SQL and working on incorporating new AI tools to optimize processes like TensorFlow and PyTorch.",
+    "text_obj": "To use AI and data analysis to solve problems focused on the financial area, optimizing processes that allow for better decision-making, with a focus on risk control and profit maximization.",
+    "text_logros": "Development of an intranet to automate financial and reporting processes, integrating multiple information sources and improving data traceability."
 }
