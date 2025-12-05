@@ -21,29 +21,28 @@ export class SobremiComponent {
     private lenguajeService: LenguajeService
   ) {}
 
-  showModal=false;
+  showModal = false;
   itemSeleccionado = null;
-  idioma:string;
+  idioma: 'es' | 'en';
   loading = true;
-  imagesLoaded: number = 0;
+  imagesLoaded = 0;
 
   ngOnInit() {
-    const savedLanguage = localStorage.getItem('language');
 
-    if (savedLanguage) {
-      this.idioma = savedLanguage;
-    } else {
-      this.idioma = this.lenguajeService.getLanguage();
-    }
-    this.changeLanguage(this.idioma);
+    const lang = this.lenguajeService.getLanguage();
+    this.idioma = lang;
 
+
+    this.translationService.changeLanguage(lang);
   }
 
-  changeLanguage(language) {
+  changeLanguage(language: 'es' | 'en') {
+    this.lenguajeService.setLanguage(language);
+
     this.translationService.changeLanguage(language);
-    localStorage.setItem('language', language);
-  }
 
+    this.idioma = language;
+  }
 
   enviarAlMenu() {
     this.router.navigate(['/menu'], { queryParamsHandling: 'preserve' });

@@ -96,7 +96,7 @@ export class MenuComponent implements OnInit {
     const lang = this.lenguajeService.getLanguage();
     this.translationService.changeLanguage(lang);
     this.idioma = lang;
-
+    
   }
 
   onImageLoad() {

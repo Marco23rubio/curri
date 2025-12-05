@@ -14,7 +14,6 @@ export const routes: Routes = [
     {path:'menu',component: MenuComponent},
     {path:'experiencia',component:ExperienciaComponent},
     {path:'educacion',component:EducacionComponent},
-    {path:'cursos',component:CursosComponent},
     {path:'proyectos',component:ProyectosComponent},
     {path:'sobremi',component:SobremiComponent},
     {path:'contacto',component:ContactoComponent},

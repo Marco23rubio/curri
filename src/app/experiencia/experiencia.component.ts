@@ -28,40 +28,40 @@ export class ExperienciaComponent {
     itemsActuales = [];
 
 
-    ngOnInit() {
-        const savedLanguage = localStorage.getItem('language');
+  ngOnInit() {
+    const lang = this.lenguajeService.getLanguage();
+    this.idioma = lang;
 
-        if (savedLanguage) {
-            this.idioma = savedLanguage;
-        } else {
-            this.idioma = this.lenguajeService.getLanguage();
-        }
-        this.changeLanguage(this.idioma);
-        this.actualizarItems();
+    this.translationService.changeLanguage(lang);
 
-        this.items.forEach((item, i) => {
-            this.acordeonAbierto[i] = false;
-            this.acordeonInternoAbierto[i] = [];
+    this.actualizarItems();
 
-        });
-    }
+    this.items.forEach((item, i) => {
+      this.acordeonAbierto[i] = false;
+      this.acordeonInternoAbierto[i] = [];
+    });
+  }
 
-    actualizarItems() {
-        this.itemsActuales = this.idioma === 'es' ? this.items : this.itemsingles;
-    }
+  actualizarItems() {
+    this.itemsActuales = this.idioma === 'es' ? this.items : this.itemsingles;
+  }
 
-    toggleAcordeon(i: number) {
-        this.acordeonAbierto[i] = !this.acordeonAbierto[i];
-    }
+  toggleAcordeon(i: number) {
+    this.acordeonAbierto[i] = !this.acordeonAbierto[i];
+  }
 
-    toggleAcordeonInterno(i: number, j: number) {
-        this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
-    }
+  toggleAcordeonInterno(i: number, j: number) {
+    this.acordeonInternoAbierto[i][j] = !this.acordeonInternoAbierto[i][j];
+  }
 
-    changeLanguage(language) {
-        this.translationService.changeLanguage(language);
-        localStorage.setItem('language', language);
-    }
+  changeLanguage(language: 'es' | 'en') {
+    this.lenguajeService.setLanguage(language);
+
+    this.translationService.changeLanguage(language);
+
+    this.idioma = language;
+    this.actualizarItems();
+  }
 
     splitInternLine(p: string) {
   const parts = p.split(/\s*[-–—]\s*/); // tolera sin/ con espacios y en/em dash

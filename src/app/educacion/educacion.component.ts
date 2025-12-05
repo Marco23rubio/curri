@@ -25,15 +25,10 @@ export class EducacionComponent {
   itemsActuales = [];
 
   ngOnInit() {
-    const savedLanguage = localStorage.getItem('language');
-
-    if (savedLanguage) {
-      this.idioma = savedLanguage;
-    } else {
-      this.idioma = this.lenguajeService.getLanguage();
-    }
-    this.changeLanguage(this.idioma);
-    this.actualizarItems();
+  const lang = this.lenguajeService.getLanguage();
+  this.idioma = lang;
+  this.translationService.changeLanguage(lang);
+  this.actualizarItems();
     
   }
 
@@ -42,8 +37,10 @@ export class EducacionComponent {
   }
 
   changeLanguage(language) {
-    this.translationService.changeLanguage(language);
-    localStorage.setItem('language', language);
+  this.lenguajeService.setLanguage(language);   
+  this.translationService.changeLanguage(language);    
+  this.idioma = language;
+  this.actualizarItems();
   }
 
   items = [

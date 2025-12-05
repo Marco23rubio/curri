@@ -25,31 +25,29 @@ export class LenguajeService {
     this.languageSubject = new BehaviorSubject<Lang>(initial);
     this.language$ = this.languageSubject.asObservable();
 
-    // Si la URL no trae ?lang, lo agregamos con el valor inicial (sin recargar)
+
     this.syncUrlParam(initial, true);
   }
 
-  /** Cambia y persiste el idioma */
+
   setLanguage(language: Lang): void {
     this.languageSubject.next(language);
     this.persist(language);
     this.updateHtmlLang(language);
-    // Actualiza/impone ?lang en la URL (sin recargar)
+
     this.syncUrlParam(language);
   }
 
-  /** Obtiene el idioma actual (siempre 'es' | 'en') */
+  
   getLanguage(): Lang {
     return this.languageSubject.value;
   }
 
-  // ----------------- Privados -----------------
 
-  /** Orden: URL (?lang) -> Cookie -> localStorage -> navegador -> DEFAULT */
   private initLanguage(): Lang {
     const urlLang = this.getLangFromUrl();
     if (urlLang) {
-      // Persistimos en microtarea para no bloquear la construcción
+
       queueMicrotask(() => this.persist(urlLang));
       this.updateHtmlLang(urlLang);
       return urlLang;
@@ -74,10 +72,8 @@ export class LenguajeService {
   }
 
   private persist(lang: Lang): void {
-    // localStorage (defensivo)
     this.safeLocalSet(this.LOCAL_KEY, lang);
 
-    // Cookie 1 año; Secure solo en HTTPS; SameSite Lax por defecto
     const isHttps = this.document?.location?.protocol === 'https:';
     this.cookie.set(this.COOKIE_KEY, lang, 365, '/', undefined, isHttps, 'Lax');
   }
@@ -96,7 +92,7 @@ export class LenguajeService {
     }
   }
 
-  /** Mantiene el query param ?lang=es|en en la URL sin recargar */
+
   private syncUrlParam(lang: Lang, onlyIfMissing = false) {
     try {
       const href = this.document?.location?.href ?? window.location.href;
@@ -105,7 +101,7 @@ export class LenguajeService {
       url.searchParams.set('lang', lang);
       history.replaceState(null, '', url.toString());
     } catch {
-      // no-op
+     
     }
   }
 

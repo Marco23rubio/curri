@@ -14,7 +14,6 @@
   </style>
 </head>
 
-
 <div *ngIf="!isReady" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/60">
   <div class="h-10 w-10 rounded-full border-4 border-white border-t-transparent animate-spin"></div>
   <span class="sr-only">Cargando…</span>
@@ -26,108 +25,99 @@
   style="background-size: cover; background-repeat: no-repeat; background-position: center;"
   [class.opacity-0]="!isReady"
 >
- 
   <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
 
   <div class="relative z-10 min-h-screen">
-    
-    <div class="fixed top-4 right-4 z-20">
-      <div class="relative inline-block text-left">
-        <div class="flex items-center gap-2">
-          <span class="hidden sm:inline-block text-sm font-medium text-gray-200">Language:</span>
-          <button
-            (click)="toggleDropdown()"
-            type="button"
-            class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-purple-800 to-green-500 shadow-lg shadow-black/40 hover:from-pink-500 hover:to-green-500 transition-transform duration-200 hover:scale-105"
-            id="options-menu"
-            aria-haspopup="true"
-            aria-expanded="true"
-          >
-            {{ lenguaje }}
-            <svg class="-mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="origin-top-right absolute right-0 mt-2 w-40 rounded-xl shadow-2xl bg-black/90  ring-white/10 backdrop-blur">
-          <div
-            [style.display]="showDropdown ? 'block' : 'none'"
-            class="py-1"
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="options-menu"
-          >
-            <a
-              class="cursor-pointer block px-4 py-2 text-sm text-gray-100 hover:bg-white/10 hover:text-white"
-              role="menuitem"
-              (click)="changeLanguage('es')"
-            >
-              Español
-            </a>
-            <a
-              class="cursor-pointer block px-4 py-2 text-sm text-gray-100 hover:bg-white/10 hover:text-white"
-              role="menuitem"
-              (click)="changeLanguage('en')"
-            >
-              English
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-   
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
-      
-      <div
-        class="w-full flex flex-wrap flex-col md:flex-row items-center justify-between bg-black/30 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl shadow-black/40 px-6 sm:px-10 py-10 md:py-14"
-      >
-        
-        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start space-y-6">
-          
+      <div class="w-full flex flex-col gap-4">
+        <div class="flex justify-end">
+          <div class="relative inline-block text-left">
+            <div class="flex items-center gap-2">
+              <span class="hidden sm:inline-block text-sm font-medium text-gray-200">Language:</span>
+              <button
+                (click)="toggleDropdown()"
+                type="button"
+                class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-purple-800 to-green-500 shadow-lg shadow-black/40 hover:from-pink-500 hover:to-green-500 transition-transform duration-200 hover:scale-105"
+                id="options-menu"
+                aria-haspopup="true"
+                aria-expanded="true"
+              >
+                {{ lenguaje }}
+                <svg class="-mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
 
-          <h1 class="text-3xl md:text-5xl text-white font-bold leading-tight text-center md:text-left">
-            <span
-              data-i18n="bienvenido"
-              class="block bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500"
-            >
-            </span>
-            <span
-              data-i18n="curriculum"
-              class="block mt-1"
-            >
-            </span>
-          </h1>
-
-          
-          <div class="pt-4 flex flex-col items-center md:items-start gap-3">
-            <button
-              data-i18n="empezemos"
-              class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-semibold py-2.5 px-6 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-green-400 transform transition hover:scale-105 duration-300 ease-in-out"
-              type="button"
-              (click)="enviarAlMenu()"
-            >
-            </button>
-
+            <div class="origin-top-right absolute right-0 mt-2 w-40 rounded-xl shadow-2xl bg-black/90 ring-white/10 backdrop-blur z-50">
+              <div
+                [style.display]="showDropdown ? 'block' : 'none'"
+                class="py-1"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="options-menu"
+              >
+                <a
+                  class="cursor-pointer block px-4 py-2 text-sm text-gray-100 hover:bg-white/10 hover:text-white"
+                  role="menuitem"
+                  (click)="changeLanguage('es')"
+                >
+                  Español
+                </a>
+                <a
+                  class="cursor-pointer block px-4 py-2 text-sm text-gray-100 hover:bg-white/10 hover:text-white"
+                  role="menuitem"
+                  (click)="changeLanguage('en')"
+                >
+                  English
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-       
-        <div class="w-full xl:w-3/5 mt-10 md:mt-0 md:pl-8 flex justify-center">
-          <div class="relative w-full md:w-4/5">
-          
-            <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-green-500/40 via-purple-500/30 to-pink-500/40 blur-xl opacity-50"></div>
+        <div
+          class="w-full flex flex-wrap flex-col md:flex-row items-center justify-between bg-black/30 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl shadow-black/40 px-6 sm:px-10 py-10 md:py-14"
+        >
+          <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start space-y-6">
+            <h1 class="text-3xl md:text-5xl text-white font-bold leading-tight text-center md:text-left">
+              <span
+                data-i18n="bienvenido"
+                class="block bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500"
+              >
+              </span>
+              <span
+                data-i18n="curriculum"
+                class="block mt-1"
+              >
+              </span>
+            </h1>
 
-            <img
-              class="relative mx-auto w-full rounded-[2rem] border border-white/10 shadow-2xl shadow-black/50 transform -rotate-3 transition hover:scale-105 duration-700 ease-in-out hover:rotate-1"
-              [src]="heroUrl"
-              alt="Imagen landing"
-              loading="eager"
-            />
+            <div class="pt-4 flex flex-col items-center md:items-start gap-3">
+              <button
+                data-i18n="empezemos"
+                class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-semibold py-2.5 px-6 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-green-400 transform transition hover:scale-105 duration-300 ease-in-out"
+                type="button"
+                (click)="enviarAlMenu()"
+              >
+              </button>
+            </div>
+          </div>
+
+          <div class="w-full xl:w-3/5 mt-10 md:mt-0 md:pl-8 flex justify-center">
+            <div class="relative w-full md:w-4/5">
+              <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-green-500/40 via-purple-500/30 to-pink-500/40 blur-xl opacity-50"></div>
+
+              <img
+                class="relative mx-auto w-full rounded-[2rem] border border-white/10 shadow-2xl shadow-black/50 transform -rotate-3 transition hover:scale-105 duration-700 ease-in-out hover:rotate-1"
+                [src]="heroUrl"
+                alt="Imagen landing"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>

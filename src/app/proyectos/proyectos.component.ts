@@ -27,14 +27,13 @@ export class ProyectosComponent {
   imagesLoaded: number = 0;
 
   ngOnInit() {
-    const savedLanguage = localStorage.getItem('language');
 
-    if (savedLanguage) {
-      this.idioma = savedLanguage;
-    } else {
-      this.idioma = this.lenguajeService.getLanguage();
-    }
-    this.changeLanguage(this.idioma);
+    const lang = this.lenguajeService.getLanguage();
+    this.idioma = lang;
+
+    this.translationService.changeLanguage(lang);
+
+
     this.preloadImages();
   }
 
@@ -51,9 +50,16 @@ export class ProyectosComponent {
     });
   }
 
-  changeLanguage(language) {
+  changeLanguage(language: 'es' | 'en') {
+
+
+    this.lenguajeService.setLanguage(language);
+
+
     this.translationService.changeLanguage(language);
-    localStorage.setItem('language', language);
+
+   
+    this.idioma = language;
   }
   items = [
     {
