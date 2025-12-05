@@ -3,7 +3,6 @@ import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { EducacionComponent } from './educacion/educacion.component';
-import { CursosComponent } from './cursos/cursos.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { SobremiComponent } from './sobremi/sobremi.component';
 import { ContactoComponent } from './contacto/contacto.component';
