@@ -5,9 +5,22 @@
   <title>CV</title>
   <base href="/curri/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dvzucfpbk/image/upload/v1717012151/iconexp_i0gths.png">
-
+  <script type="text/javascript">
+    (function() {
+      // Verificar si hay una redirección en la URL
+      var params = new URLSearchParams(window.location.search);
+      var redirect = params.get('redirect');
+      if (redirect) {
+        // Ajusta la URL para que Angular pueda manejarla
+        window.history.replaceState(null, '', redirect);
+      }
+    })();
+  </script>
   <style>
     /* Mantén oculto el root hasta que termine el bootstrap */
     app-root[hidden] { display: block !important; visibility: hidden; }
