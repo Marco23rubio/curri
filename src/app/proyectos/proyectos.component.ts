@@ -76,7 +76,7 @@ export class ProyectosComponent {
       titulo: 'Machine Learning',
       tituloingles: 'Machine Learning',
       imagen: 'https://res.cloudinary.com/dvzucfpbk/image/upload/v1764831037/ia5_kclpix.jpg',
-      link: 'https://github.com/Marco23rubio/curri'
+      link: 'https://github.com/Marco23rubio/IA'
     },
     {
       descripcion: 'Código en Python para analizar el valor de acciones de empresas. El objetivo fue calcular si una acción estaba cara o barata usando métricas financieras y tendencias del mercado, facilitando decisiones de inversión.',
