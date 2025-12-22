@@ -110,7 +110,8 @@
 
                 <!-- footer pegado abajo -->
                 <div class="mt-auto pt-2 flex items-center justify-between text-[11px] md:text-xs text-gray-400">
-                  <span>Ver proyecto</span>
+                  <span *ngIf="idioma === 'es'">Ver proyecto</span>
+                  <span *ngIf="idioma === 'en'">View project</span>
                   <svg
                     class="w-4 h-4 text-red-400 group-hover:text-red-300 transition"
                     viewBox="0 0 24 24"
