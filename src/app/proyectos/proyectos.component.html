@@ -20,7 +20,7 @@
 
         <div class="space-y-6 relative z-10">
 
-          <!-- FILA 1 -->
+    
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <a
               *ngFor="let item of items | slice:0:2"
@@ -38,7 +38,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
               </div>
 
-              <!-- contenedor de texto ocupa todo lo restante -->
+              
               <div class="flex-1 p-3 md:p-4 flex flex-col gap-2">
                 <span *ngIf="idioma === 'es'" class="text-white text-base md:text-lg font-semibold leading-snug">
                   {{ item.titulo }}
@@ -54,9 +54,10 @@
                   {{ item.descripcioningles }}
                 </p>
 
-                <!-- footer pegado abajo -->
+                
                 <div class="mt-auto pt-2 flex items-center justify-between text-[11px] md:text-xs text-gray-400">
-                  <span>Ver proyecto</span>
+                  <span *ngIf="idioma === 'es'">Ver proyecto</span>
+                  <span *ngIf="idioma === 'en'">View project</span>
                   <svg
                     class="w-4 h-4 text-red-400 group-hover:text-red-300 transition"
                     viewBox="0 0 24 24"
