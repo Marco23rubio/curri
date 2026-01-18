@@ -78,8 +78,8 @@ export class ExperienciaComponent {
             'fecha': 'Septiembre 2024/Noviembre 2025',
             'puesto': 'Consultor Sr.',
             'descripcion': [
-                'Automatización de la obtención de datos de SAP y Páginas web además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos',
-                'Desarrollo de una Intranet con Angular y FastAPI para la automatización de procesos financieros y de reporting, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
+                'Automatización de la obtención de datos de SAP,Páginas web y SQL además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos con Python',
+                'Desarrollo de una Intranet con Angular y FastAPI para la automatización de procesos financieros y de reporting con Power Bi, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
                 'Desarrollo de presupuestos enfocado en asegurar una asignación óptima de recursos entre áreas y mejorar la efectividad del gasto anual para una mejor planeación con los inversionistas',
                 'Incremento de la retención y satisfacción del equipo mediante acciones de mejora del ambiente laboral',
             ],
