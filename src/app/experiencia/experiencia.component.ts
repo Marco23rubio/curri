@@ -79,7 +79,7 @@ export class ExperienciaComponent {
             'puesto': 'Consultor Sr.',
             'descripcion': [
                 'Automatización de la obtención de datos de SAP,Páginas web y SQL además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos con Python',
-                'Desarrollo de una Intranet con Angular y FastAPI para la automatización de procesos financieros y de reporting con Power Bi, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
+                'Desarrollo de una Intranet con Angular,FastAPI y GCP para la automatización de procesos financieros y de reporting con Power Bi, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
                 'Desarrollo de presupuestos enfocado en asegurar una asignación óptima de recursos entre áreas y mejorar la efectividad del gasto anual para una mejor planeación con los inversionistas',
                 'Incremento de la retención y satisfacción del equipo mediante acciones de mejora del ambiente laboral',
             ],
@@ -125,7 +125,7 @@ export class ExperienciaComponent {
     'puesto': 'Senior Consultant',
     'descripcion': [
       'Automation of data extraction from SAP and web sources, including data cleaning and transformation for use in predictive modeling projects',
-      'Development of an Intranet using Angular and FastAPI for the automation of financial and reporting processes, integrating multiple data sources and improving data traceability',
+      'Development of an Intranet using Angular,FastAPI and GCP for the automation of financial and reporting processes, integrating multiple data sources and improving data traceability',
       'Budget development focused on ensuring optimal resource allocation across departments and improving annual spending efficiency for better planning with stakeholders',
       'Increase in team retention and satisfaction through workplace environment improvement initiatives'
     ],
