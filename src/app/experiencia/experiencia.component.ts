@@ -75,16 +75,16 @@ export class ExperienciaComponent {
     items = [
                 {
             'empresa': 'Liverpool - ',
-            'fecha': 'Septiembre 2024/Noviembre 2025',
+            'fecha': 'Septiembre 2024/Diciembre 2025',
             'puesto': 'Consultor Sr.',
             'descripcion': [
                 'Automatización de la obtención de datos de SAP,Páginas web y SQL además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos con Python',
                 'Desarrollo de una Intranet con Angular,FastAPI y GCP para la automatización de procesos financieros y de reporting con Power Bi, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
-                'Desarrollo de presupuestos enfocado en asegurar una asignación óptima de recursos entre áreas y mejorar la efectividad del gasto anual para una mejor planeación con los inversionistas',
+                'Análisis de presupuestos y pronósticos financieros apoyados en Python',
                 'Incremento de la retención y satisfacción del equipo mediante acciones de mejora del ambiente laboral',
             ],
             'objetivo' : ['Al obtener ahora de manera automática los datos de forma diaria, se ahorraba hasta 2 horas diarias en la obtención y limpieza de datos',
-                'Al atender tantas areas diferentes, con necesidades parecidas entre ellas, el desarrollo de la intranet permitió reducir los tiempos de análisis de datos y creación de dashboards en un 50%',
+                'Al atender tantas areas diferentes, con necesidades parecidas entre ellas, el desarrollo de la intranet permitió reducir los tiempos de análisis de datos y creación de dashboards',
                 'El mejorar el proceso de presupuestación permitió tener un mayor horizonte de tiempo para los cambios y ajustes necesarios en fechas criticas del año fiscal',
                 'Elimiar la alta rotación del equipo de trabajo, el cual era un problema constante en el área, mejorando la comunicación y el ambiente laboral'
             ]
@@ -94,16 +94,21 @@ export class ExperienciaComponent {
             'fecha': 'Junio 2022/Junio 2024',
             'puesto': 'Desarrollador Jr',
             'descripcion': [
-                'Desarrollo de Frontend con Angular y TailwindCSS, para una mejor experiencia de usuario y el uso de PHP Y Spring Boot en el Backend para una mayor eficiencia en el manejo de datos',
-                'Desarrollo y mantenimiento de aplicaciones de escritorio con C++',
+                'Desarrollo de scripts en Python para automatización de procesos de datos y reportes en Power BI',
+                'Trabajo bajo metodología Agile Scrum, con el uso de Azure Dev Ops',
                 'Manipulación de datos con PostgreSQL y MySQL para asegurar la integridad y disponibilidad de la información',
-                'Uso de metodologías ágiles como Scrum, asegurando entregas continuas y adaptabilidad a cambios en los requisitos del cliente',
+                'Apoyo en la migración de sistemas legados, mejorando accesibilidad y calidad de la información con Desarrollo Web',
             ],
-            'objetivo' : ['Migrar programas legados a aplicaciones web modernas para mejorar la accesibilidad y experiencia del usuario,como cuando realice la migración del sistema del pago de nómina a una aplicación para una conectividad más rapidad y sencilla al banco encargado de los pagos con la API proporcionada por ellos',
-                'Mantener procesos financieros críticos funcionando sin interrupciones mediante aplicaciones de escritorio robustas que no necesitaban una opción web,esto involucro el mantenimiento de la opción de consulta de créditos para los empleados de Coppel',
-                'Una desarrollo eficiente de las funciones de la base de datos , además de la indexación adecuada de las tablas, permitió mejorar los tiempos de respuesta de las consultas en un 20%',
-                'El uso de Scrum permitió una mejor comunicación entre los miembros del equipo y una mayor adaptabilidad a los cambios en los requisitos del proyecto, resultando en una mayor satisfacción del cliente, medible en encuestas posteriores al proyecto'
-            ]
+            'objetivo': [
+    'Automatizar procesos operativos y financieros mediante scripts en Python, reduciendo tareas manuales y mejorando la eficiencia en la generación de reportes para áreas de negocio',
+
+    'Contribuir al mantenimiento y mejora de sistemas existentes, participando en la migración parcial de aplicaciones legadas hacia soluciones web que incrementaran la accesibilidad y disponibilidad de la información',
+
+    'Optimizar consultas y estructuras de bases de datos en PostgreSQL y MySQL mediante mejoras en funciones e indexación básica, logrando tiempos de respuesta más eficientes en procesos recurrentes',
+
+    'Colaborar en el desarrollo y modernización de interfaces de usuario, participando en la migración de aplicaciones de escritorio desarrolladas en C++ hacia aplicaciones web con Angular y backend en Java, mejorando la usabilidad y el acceso a la información'
+
+]
         },
         {
             'empresa': 'Prácticas/Trabajos Medio Tiempo',
@@ -118,53 +123,54 @@ export class ExperienciaComponent {
         }
     ]
 
- itemsingles = [
-  {
-    'empresa': 'Liverpool - ',
-    'fecha': 'September 2024 / November 2025',
-    'puesto': 'Senior Consultant',
-    'descripcion': [
-      'Automation of data extraction from SAP and web sources, including data cleaning and transformation for use in predictive modeling projects',
-      'Development of an Intranet using Angular,FastAPI and GCP for the automation of financial and reporting processes, integrating multiple data sources and improving data traceability',
-      'Budget development focused on ensuring optimal resource allocation across departments and improving annual spending efficiency for better planning with stakeholders',
-      'Increase in team retention and satisfaction through workplace environment improvement initiatives'
-    ],
-    'objetivo': [
-      'By automating daily data extraction, up to 2 hours per day previously spent on data gathering and cleaning were saved',
-      'Serving multiple departments with similar needs, the intranet reduced data analysis and dashboard creation time by 50%',
-      'Improving the budgeting process provided a longer horizon to make adjustments during critical fiscal dates',
-      'Reducing the high turnover rate in the team by improving communication and workplace environment'
-    ]
-  },
-  {
-    'empresa': 'Coppel - ',
-    'fecha': 'June 2022 / June 2024',
-    'puesto': 'Junior Developer',
-    'descripcion': [
-      'Frontend development with Angular and TailwindCSS for improved user experience, and PHP and Spring Boot on the backend for better data processing efficiency',
-      'Development and maintenance of desktop applications using C++',
-      'Data manipulation with PostgreSQL and MySQL to ensure data integrity and availability',
-      'Use of agile methodologies such as Scrum, ensuring continuous delivery and adaptability to changing client requirements'
-    ],
-    'objetivo': [
-      'Migrate legacy systems to modern web applications to improve accessibility and user experience, such as migrating the payroll payment system to a web application for faster and simpler connectivity to the bank API handling disbursements',
-      'Maintain critical financial processes running without interruption through robust desktop applications where a web version was not required, including the employee credit consultation system',
-      'Efficient development of database functions and proper table indexing improved query response times by 20%',
-      'Using Scrum improved team communication and adaptability to changing requirements, resulting in higher client satisfaction measured through post-project surveys'
-    ]
-  },
-  {
-    'empresa': 'Internships / Part-Time Jobs',
-    'fecha': 'February 2017 / June 2021',
-    'puesto': 'Intern',
-    'descripcion': [
-      'Universidad del Bajío - December 2020 / June 2021 - Development of educational material for the finance program, deepening accounting and financial theory',
-      'NexGlobal - June 2019 / June 2020 - Conducted accounting analysis for small businesses and researched their industry to recommend the best financial option through bank or government programs',
-      'Grupo Vama - January 2019 / June 2019 - Payroll management and HR operations for company employees',
-      'Camiones Laija - February 2017 / December 2018 - Accounting and payroll control using Excel and BEA software for fleet management'
-    ]
-  }
-];
+itemsingles = [
+    {
+        'empresa': 'Liverpool - ',
+        'fecha': 'September 2024 / December 2025',
+        'puesto': 'Senior Consultant',
+        'descripcion': [
+            'Automation of data extraction from SAP, websites, and SQL databases, including data cleaning and transformation for use in predictive model development with Python',
+            'Development of an internal Intranet using Angular, FastAPI, and GCP to automate financial and reporting processes with Power BI, integrating multiple data sources and improving data traceability',
+            'Analysis of budgets and financial forecasts supported by Python',
+            'Improvement of team retention and satisfaction through initiatives focused on enhancing the work environment'
+        ],
+        'objetivo': [
+            'By automating daily data acquisition, up to two hours per day were saved in data collection and cleaning tasks',
+            'By supporting multiple areas with similar needs, the intranet development reduced data analysis time and dashboard creation efforts',
+            'Improving the budgeting process provided a longer planning horizon for critical adjustments during key fiscal periods',
+            'Eliminating high team turnover, which had been a recurring issue in the area, by improving communication and the overall work environment'
+        ]
+    },
+    {
+        'empresa': 'Coppel - ',
+        'fecha': 'June 2022 / June 2024',
+        'puesto': 'Junior Developer',
+        'descripcion': [
+            'Development of Python scripts to automate data processes and Power BI reporting',
+            'Work under Agile Scrum methodology using Azure DevOps',
+            'Data manipulation using PostgreSQL and MySQL to ensure data integrity and availability',
+            'Support in the migration of legacy systems, improving information accessibility and quality through web development'
+        ],
+        'objetivo': [
+            'Automate operational and financial processes using Python scripts, reducing manual tasks and improving efficiency in report generation for business areas',
+            'Contribute to the maintenance and improvement of existing systems by participating in the partial migration of legacy applications to web-based solutions, increasing information accessibility and availability',
+            'Optimize database queries and structures in PostgreSQL and MySQL through improvements in functions and basic indexing, achieving more efficient response times in recurring processes',
+            'Collaborate in the development and modernization of user interfaces by participating in the migration of desktop applications developed in C++ to web applications using Angular with a Java backend, improving usability and access to information'
+        ]
+    },
+    {
+        'empresa': 'Internships / Part-Time Roles',
+        'fecha': 'February 2017 / June 2021',
+        'puesto': 'Intern',
+        'descripcion': [
+            'Universidad del Bajío – December 2020 / June 2021 – Development of educational materials for the Finance program, strengthening theoretical knowledge in accounting and financial topics',
+            'NexGlobal – June 2019 / June 2020 – Performed accounting analysis for SMEs and researched business sectors to recommend the most suitable bank or government credit options',
+            'Grupo Vama – January 2019 / June 2019 – Payroll control and human resources management for company employees',
+            'Camiones Laija – February 2017 / December 2018 – Accounting and payroll control using Excel and BEA software for fleet management'
+        ]
+    }
+]
+
 
 
     enviarAlMenu() {

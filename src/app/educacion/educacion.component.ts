@@ -45,8 +45,8 @@ export class EducacionComponent {
 
   items = [
     {
-        'escuela': 'Deep Learning AI',
-        'fecha': 'Octubre 2025/Actualidad',
+        'escuela': 'University of Michigan',
+        'fecha': 'Diciembre 2025/Actualidad',
         'carrera': 'Redes Neuronales y Deep Learning',
         'descripcion': [
             'Formación enfocada en el desarrollo de modelos de IA y redes neuronales orientados a predicción y análisis avanzado.',
@@ -102,8 +102,8 @@ export class EducacionComponent {
 
 itemsingles = [
     {
-        'escuela': 'Deep Learning AI',
-        'fecha': 'October 2025/Present',
+        'escuela': 'University of Michigan',
+        'fecha': 'December 2025/Present',
         'carrera': 'Neural Networks and Deep Learning',
         'descripcion': [
             'Training focused on developing AI models and neural networks oriented toward prediction and advanced analytics.',
