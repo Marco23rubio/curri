@@ -75,7 +75,7 @@ export class ExperienciaComponent {
     items = [
                 {
             'empresa': 'Liverpool - ',
-            'fecha': 'Septiembre 2024/Diciembre 2025',
+            'fecha': 'Septiembre 2024/Noviembre 2025',
             'puesto': 'Consultor Sr.',
             'descripcion': [
                 'Automatización de la obtención de datos de SAP,Páginas web y SQL además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos con Python',
@@ -126,7 +126,7 @@ export class ExperienciaComponent {
 itemsingles = [
     {
         'empresa': 'Liverpool - ',
-        'fecha': 'September 2024 / December 2025',
+        'fecha': 'September 2024 / November 2025',
         'puesto': 'Senior Consultant',
         'descripcion': [
             'Automation of data extraction from SAP, websites, and SQL databases, including data cleaning and transformation for use in predictive model development with Python',

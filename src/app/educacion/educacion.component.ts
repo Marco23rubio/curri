@@ -46,7 +46,7 @@ export class EducacionComponent {
   items = [
     {
         'escuela': 'University of Michigan',
-        'fecha': 'Diciembre 2025/Actualidad',
+        'fecha': 'Enero 2025/Actualidad',
         'carrera': 'Redes Neuronales y Deep Learning',
         'descripcion': [
             'Formación enfocada en el desarrollo de modelos de IA y redes neuronales orientados a predicción y análisis avanzado.',
@@ -79,15 +79,6 @@ export class EducacionComponent {
             'Licenciatura enfocada en análisis financiero, valuación de empresas, gestión de inversiones y toma de decisiones corporativas basadas en métricas cuantitativas.',
         ],
         'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Tecmi'
-    },
-    {
-        'escuela': 'AMIB',
-        'carrera': 'Análisis de mercados Bursátiles',
-        'fecha': 'Mayo 2019/Mayo 2020',
-        'descripcion': [
-            'Formación en análisis de empresas bursátiles utilizando Excel, macros y herramientas cuantitativas, así como en la comprensión y operación de instrumentos financieros.',
-        ],
-        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Mercados%20Burs%C3%A1tiles'
     },
     {
         'escuela': 'Canacintra/Tec de Monterrey/Platzi',
@@ -136,15 +127,6 @@ itemsingles = [
             'Undergraduate program focused on financial analysis, business valuation, investment management, and data-driven corporate decision-making.',
         ],
         'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Tecmi'
-    },
-    {
-        'escuela': 'AMIB',
-        'carrera': 'Stock Market Analysis',
-        'fecha': 'May 2019/May 2020',
-        'descripcion': [
-            'Training in the analysis of publicly traded companies using Excel, macros, and quantitative tools, as well as the understanding and operation of financial instruments.',
-        ],
-        'ruta': 'https://github.com/Marco23rubio/Cursos/tree/master/Mercados%20Burs%C3%A1tiles'
     },
     {
         'escuela': 'Canacintra/Tec de Monterrey/Platzi',
