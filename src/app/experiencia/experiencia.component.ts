@@ -76,7 +76,7 @@ export class ExperienciaComponent {
                 {
             'empresa': 'Liverpool - ',
             'fecha': 'Septiembre 2024/Noviembre 2025',
-            'puesto': 'Consultor Sr.',
+            'puesto': 'Consultor',
             'descripcion': [
                 'Automatización de la obtención de datos de SAP,Páginas web y SQL además de su respectiva limpieza y transformación para su uso en el desarrollo de modelos predictivos con Python',
                 'Desarrollo de una Intranet con Angular,FastAPI y GCP para la automatización de procesos financieros y de reporting con Power Bi, integrando múltiples fuentes de información y mejorando la trazabilidad de los datos',
@@ -92,7 +92,7 @@ export class ExperienciaComponent {
         {
             'empresa': 'Coppel - ',
             'fecha': 'Junio 2022/Junio 2024',
-            'puesto': 'Desarrollador Jr',
+            'puesto': 'Desarrollador Full Stack',
             'descripcion': [
                 'Desarrollo de scripts en Python para automatización de procesos de datos y reportes en Power BI',
                 'Trabajo bajo metodología Agile Scrum, con el uso de Azure Dev Ops',
@@ -127,7 +127,7 @@ itemsingles = [
     {
         'empresa': 'Liverpool - ',
         'fecha': 'September 2024 / November 2025',
-        'puesto': 'Senior Consultant',
+        'puesto': 'Consultant',
         'descripcion': [
             'Automation of data extraction from SAP, websites, and SQL databases, including data cleaning and transformation for use in predictive model development with Python',
             'Development of an internal Intranet using Angular, FastAPI, and GCP to automate financial and reporting processes with Power BI, integrating multiple data sources and improving data traceability',
